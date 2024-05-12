@@ -60,18 +60,32 @@ class AdamNLP(AdamW):
 
         # all parameters
         all_params = set(param_analyzer.display_all_parameters())
-
-        if not layer_freeze['embeddings']:
-            rest_param_names = set(param_analyzer.get_bert_no_reg_parameters())
-            weights_param_names = all_params - rest_param_names
-            
-        if layer_freeze['embeddings'] and layer_freeze['encoder'] is not None:
-            parameter_freezing_layers(model, layer_freeze)
-            freeze_layers_num = layer_freeze['encoder']
-            freeze_param_names = param_analyzer.get_embeddings_params() + param_analyzer.get_encoder_parameters_by_layers(freeze_layers_num, exclude_no_reg=False)
+        
+        # when embedding layer is frozen
+        if layer_freeze['embeddings']:
+            if layer_freeze['encoder'] is None: # encoder not freeze
+                parameter_freezing_layers(model, layer_freeze)
+                freeze_param_names = param_analyzer.get_embeddings_params()
+        
+            else: #encoder freeze
+                parameter_freezing_layers(model, layer_freeze)
+                freeze_layers_num = layer_freeze['encoder']
+                freeze_param_names = param_analyzer.get_embeddings_params() + param_analyzer.get_encoder_parameters_by_layers(freeze_layers_num, exclude_no_reg=False)
             weights_param_names = all_params - set(freeze_param_names) - set(param_analyzer.get_bert_no_reg_parameters()) - set(param_analyzer.get_classifier_no_reg_parameters())
             rest_param_names = all_params - set(freeze_param_names) - weights_param_names
 
+        # when embedding layer not freeze
+        elif not layer_freeze['embeddings']:
+            if layer_freeze['encoder'] is not None:     # encoder freeze
+                parameter_freezing_layers(model, layer_freeze)
+                freeze_layers_num = layer_freeze['encoder']
+                freeze_param_names = param_analyzer.get_encoder_parameters_by_layers(freeze_layers_num, exclude_no_reg=False)
+            else: #encoder nor freeze
+                freeze_param_names = []
+            weights_param_names = all_params - set(freeze_param_names) - set(param_analyzer.get_bert_no_reg_parameters())- set(param_analyzer.get_classifier_no_reg_parameters())- set(param_analyzer.get_embedding_layer_norm_parameters())
+            rest_param_names = all_params - set(freeze_param_names) - weights_param_names
+            
+            
         for n, p in model.named_parameters():
                 if n in weights_param_names:
                     param_with_decay['params'].append(p)

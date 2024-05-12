@@ -72,4 +72,6 @@ class ModelParameterAnalyze:
     def get_embeddings_params(self):
         return [n for n, _ in self.bert.embeddings.named_parameters(prefix = 'bert.embeddings')]
      
-
+  
+    def get_embedding_layer_norm_parameters(self):
+        return [n for n, _ in self.bert.embeddings.named_parameters(prefix = 'bert.embeddings') if 'LayerNorm' in n]
