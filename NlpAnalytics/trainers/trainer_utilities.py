@@ -125,3 +125,6 @@ class ResultsMgr:
     
     def get_epoch_idx(self):
         return self.epoch_idx
+    
+    def get_num_epochs(self):
+        return self.num_epochs

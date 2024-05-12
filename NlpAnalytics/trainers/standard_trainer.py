@@ -1,7 +1,7 @@
 # Copyright 2024 @ Lun Li
 #
-# Summary: A standard trainer and evaluator to demonstrate a handful utilities and how they interact
-#          Other trainers should subclass this one and add/override the member functions
+# Summary: A standard trainer/evaluator skeleton set up the pattern and demonstrate a handful utilities
+# Other trainers should subclass this one and add/override the member key member function "calcualte_loss"
 
 from tqdm import trange
 from typing import Optional, Any, Callable
@@ -42,7 +42,6 @@ class Evaluator:
         val_acc = resMgr.get_agg_res(1)['accuracy']
         print(f'Validation accuracy is: {val_acc.item()}.\n')
 
-
 class Trainer:
     '''
     A vanilla Trainer
@@ -65,18 +64,8 @@ class Trainer:
         self.resMgr = ResultsMgr(report_freq=report_freq)
         # evaluator on validation set
         self.eval = Evaluator(self.loss_func,self.data_loaders[DataLoaderType.VALIDATION])
-    
-    def set_scheduler(self, 
-                      num_epochs : int,
-                      schedule_type : SchedulerType, 
-                      num_warmup_steps : int,
-                      override_schedule : Any):
-        
-        if override_schedule is not None:
-            self.scheduler = override_schedule
-        else: 
-            num_of_batches = len(self.data_loaders[DataLoaderType.TRAINING])
-            self.scheduler = self.optimizer.compile_schedule(num_epochs * num_of_batches, schedule_type, num_warmup_steps)
+        # default: generate batch based on trainnig data
+        self.generate_batch_based_on = DataLoaderType.TRAINING
 
     def train(self, 
               epochs : int, 
@@ -96,25 +85,20 @@ class Trainer:
         for _ in trange(epochs, desc = "Epoch"):
             self.model.train()
             self.resMgr.start_this_epoch()
-            for iter, batch in enumerate(self.data_loaders[DataLoaderType.TRAINING]):
-                # 'batch' contains [0]: input ids; [1]: attention masks; [2]: labels
-                b_input_ids, b_input_mask, b_labels = send_to_device(batch, self.device)
+            for iter, batch in enumerate(self.data_loaders[self.generate_batch_based_on]):
                 # clear out the gradients
                 self.optimizer.zero_grad()
-                #forward pass
-                result = self.model(b_input_ids, b_input_mask)
-                # apply loss functions
-                sup_loss = self.loss_func(result.logits, b_labels)
-                sup_loss = torch.mean(sup_loss)
+                # calculate loss
+                loss, sup_result, sup_labels = self.calcualte_loss(iter, batch)
                 # backward pass
-                sup_loss.backward()
+                loss.backward()
                 # update paras
                 self.optimizer.step()
                 # scheduler (if applicable)
                 if self.scheduler is not None:
                     self.scheduler.step()
                 # gather results and report if needed
-                self.resMgr.step(result.logits, b_labels, sup_loss)
+                self.resMgr.step(sup_result, sup_labels, loss)
                 self.resMgr.report(iter)
             # summary training results
             self.resMgr.end_this_epoch()
@@ -123,4 +107,28 @@ class Trainer:
             # save model
             if save_model_freq != -1 and self.resMgr.get_epoch_idx() % save_model_freq == 0:
                 save_model(self.resMgr.get_epoch_idx(), model_name, self.model, save_loc)
+    
+    def set_scheduler(self, 
+                      num_epochs : int,
+                      schedule_type : SchedulerType, 
+                      num_warmup_steps : int,
+                      override_schedule : Any):
+
+        if override_schedule is not None:
+            self.scheduler = override_schedule
+        else: 
+            num_of_batches = len(self.data_loaders[self.generate_batch_based_on])
+            self.scheduler = self.optimizer.compile_schedule(num_epochs * num_of_batches, schedule_type, num_warmup_steps)
+    
+    def calcualte_loss(self, batch_idx : int, batch : Any):        
+        # 'batch' contains [0]: input ids; [1]: attention masks; [2]: labels
+        b_input_ids, b_input_mask, b_labels = send_to_device(batch, self.device)        
+        # forward pass
+        result = self.model(b_input_ids, b_input_mask)
+        # apply loss functions
+        sup_loss = self.loss_func(result.logits, b_labels)
+        sup_loss = torch.mean(sup_loss)
+        # return total loss, sup result (.logits), sup labels
+        return sup_loss, result, b_labels
+    
     
