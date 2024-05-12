@@ -29,8 +29,6 @@ class Evaluator:
     def run(self, cur_model : nn.Module):
         resMgr = ResultsMgr(num_epochs=1)
         cur_model.eval()
-        # Tracking variables
-        preds, labels = [], []
         # Predict
         with torch.no_grad():
             resMgr.start_this_epoch()
@@ -40,9 +38,6 @@ class Evaluator:
                 sup_loss = self.loss_func(result.logits, b_labels)
                 sup_loss = torch.mean(sup_loss)
                 resMgr.step(result.logits, b_labels, sup_loss)
-
-                # preds.append(torch.argmax(result.logits.to('cpu'), dim=1))
-                # labels.append(b_labels.to('cpu'))
             resMgr.end_this_epoch(verbose=False)
         val_acc = resMgr.get_agg_res(1)['accuracy']
         print(f'Validation accuracy is: {val_acc.item()}.\n')
