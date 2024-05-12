@@ -18,17 +18,28 @@ class DataLoaderType(Enum):
     TRAINING = 1
     VALIDATION = 2
     TESTING = 3
+    TRAINING_UNLABELED = 4
 
 ### types of loss functions (register more as needed)
 class LossFuncType(Enum):
     CROSS_ENTROPY = 1
+    KL_DIV = 2
 
 ### loss function getter
 def get_loss_functions(loss_func_type : LossFuncType, reduce : Optional[str]='mean'):
     if loss_func_type == LossFuncType.CROSS_ENTROPY:
         return nn.CrossEntropyLoss(reduction=reduce)
+    elif loss_func_type == LossFuncType.KL_DIV:
+        return nn.KLDivLoss(reduction=reduce)
     else:
         raise Exception("Unsupported loss function type")
+
+# makes dataLoader iterable
+def repeat_dataloader(iterable):
+    """ repeat dataloader """
+    while True:
+        for x in iterable:
+            yield x
 
 def send_to_device(data : Any, device : Any):
     return [d.to(device) for d in data]
@@ -114,3 +125,6 @@ class ResultsMgr:
     
     def get_epoch_idx(self):
         return self.epoch_idx
+    
+    def get_num_epochs(self):
+        return self.num_epochs
