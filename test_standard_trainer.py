@@ -51,6 +51,7 @@ if __name__ == '__main__':
 
     datamodeler = {DataLoaderType.TRAINING: train_dataloader,DataLoaderType.VALIDATION: valid_dataloader,DataLoaderType.TESTING:test_dataloader}
     my_loss_func = get_loss_functions(LossFuncType.CROSS_ENTROPY)
+    
     ##### no lora ####
     optimizer = AdamNLP.newNLPAdam(loader.model, {'embeddings':False, 'encoder': None})
     model = optimizer.get_model_transformed()
@@ -58,6 +59,5 @@ if __name__ == '__main__':
     # lora_config = LoraConfig(task_type=TaskType.SEQ_CLS,target_modules=["query", "key", "value"], r=1, lora_alpha=1, lora_dropout=0.1)
     # optimizer = AdamNLP.newNLPAdam_LORA(loader.model, lora_config)
     # model = optimizer.get_model_transformed()
-
     trainer = Trainer(model, datamodeler, my_loss_func, optimizer)
-    trainer.train(3, schedule_type = SchedulerType.INVERSE_SQRT, save_model_freq=1)
+    trainer.train(1, schedule_type = SchedulerType.INVERSE_SQRT, save_model_freq=1)

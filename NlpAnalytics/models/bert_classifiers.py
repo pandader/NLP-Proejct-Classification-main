@@ -118,7 +118,10 @@ class BertClassifier(BertPreTrainedModel):
         super().__init__(bert_config)
         self.num_labels = num_labels
         self.config = bert_config
-        self.bert = BertModel(bert_config)
+        if bert_name == "":
+            self.bert = BertModel(bert_config)
+        else:
+            self.bert = BertModel.from_pretrained(bert_name)
         # initialize customized classifier
         self.classifier = MultiLabelClassifier(self.config.hidden_size, num_labels, hidden_dims, dropout)
         # Initialize weights and apply final processing

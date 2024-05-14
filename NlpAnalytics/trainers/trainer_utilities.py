@@ -88,6 +88,7 @@ class ResultsMgr:
         # gather results for this batch
         # list of tensors
         self.preds.append(torch.argmax(model_output.detach(), dim=1).to("cpu"))
+        
         self.labels.append(labels.to("cpu"))
         # list of numbers
         if loss is not None:

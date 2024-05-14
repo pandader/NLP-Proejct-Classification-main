@@ -129,6 +129,6 @@ class Trainer:
         sup_loss = self.loss_func(result.logits, b_labels)
         sup_loss = torch.mean(sup_loss)
         # return total loss, sup result (.logits), sup labels
-        return sup_loss, result, b_labels
+        return sup_loss, result.logits, b_labels
     
     
