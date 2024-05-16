@@ -67,42 +67,6 @@ class MultiLabelClassifier(nn.Module):
     def forward(self, x: torch.Tensor):
         return self.sequential(x)
 
-
-# ### MODEL ASSEMBLER
-# # Base BERT [from BERT LOADER]  + MultiLabelClassifier
-# class BertClassifier(nn.Module):
-
-#     def __init__(self, 
-#                  bert_name: Optional[str]="", # pretriained model name
-#                  num_labels: Optional[int]=2, # number of output labels
-#                  dropout: Optional[float]=0.1, # dropout ratio
-#                  hidden_dims: Optional[list]=list(), # hidden dimensions in the classifier
-#                  config_override: Optional[BertConfig]=BertConfig(), # use user provided config
-#                  load_tokenizer: Optional[bool]=False, # load corresponding tokenizer
-#                 ):
-#         super().__init__()
-#         self.loader = BertLoader(bert_name, config_override=config_override, load_tokenizer=load_tokenizer)
-#         self.bert = self.loader.model
-#         self.classifier = MultiLabelClassifier(self.loader.config.hidden_size, num_labels, hidden_dims, dropout)
-#         self.config = self.bert.config
-
-#     @property
-#     def tokenizer(self):
-#         return self.loader.tokenizer
-
-#     def forward(self, 
-#                 input_ids: torch.Tensor, 
-#                 attention_mask: torch.Tensor, 
-#                 token_type_ids: Optional[torch.Tensor]=None,
-#                 inputs_embeds=inputs_embeds,
-#                 labels=labels,
-#                 output_attentions=output_attentions,
-#                 output_hidden_states=output_hidden_states,
-#                 return_dict=return_dict,):
-#         h = self.bert(input_ids=input_ids, attention_mask=attention_mask, token_type_ids=token_type_ids)
-#         logits = self.classifier(h.pooler_output)
-#         return SequenceClassifierOutput(logits=logits)
-
 class BertClassifier(BertPreTrainedModel):
     def __init__(self, 
                  bert_name: Optional[str]="bert-base-uncased", # pretriained model name
@@ -118,7 +82,10 @@ class BertClassifier(BertPreTrainedModel):
         super().__init__(bert_config)
         self.num_labels = num_labels
         self.config = bert_config
-        self.bert = BertModel(bert_config)
+        if bert_name == "":
+            self.bert = BertModel(bert_config)
+        else:
+            self.bert = BertModel.from_pretrained(bert_name, self.config)
         # initialize customized classifier
         self.classifier = MultiLabelClassifier(self.config.hidden_size, num_labels, hidden_dims, dropout)
         # Initialize weights and apply final processing
@@ -156,7 +123,7 @@ class BertClassifier(BertPreTrainedModel):
         )
 
         logits = self.classifier(outputs.pooler_output)
-        return SequenceClassifierOutput(logits=logits)
+        return SequenceClassifierOutput(logits=logits, hidden_states=(outputs.pooler_output,))
 
 ### MODEL SELECTOR
 

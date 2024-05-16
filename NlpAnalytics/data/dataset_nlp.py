@@ -42,6 +42,7 @@ class DatasetNLP(Dataset):
                  tokenizer : PreTrainedTokenizer, 
                  cols_to_tokenize : Optional[list]=["*"], 
                  cols_label : Optional[list]=[],
+                 bool_col : Optional[list]=[]
                  ):
         """ Convert a dataframe (text 1, [text 2], ..., [label]) to a Dataset class
         Args:
@@ -49,11 +50,13 @@ class DatasetNLP(Dataset):
             tokenizer (PretrainedTokenizer): tokenizer to convert text to tensor,
             cols_to_tokenize (list, Optional): the column(s) to tokenize, Default to all except label(s)
             col_label (list, optional): the column(s) for label. Default to no label: []
+            bool_col (list, optional): the column(s) of boolean values. Default to [].
         """
         Dataset.__init__(self)
         self.input_df = input_df
         self.tokenizer = tokenizer
         self.cols_label = cols_label
+        self.bool_col = bool_col
         assert len(cols_to_tokenize) >= 1
         self.cols_to_tokenize = cols_to_tokenize
         if len(cols_to_tokenize) == 1 and cols_to_tokenize[0] == "*":
@@ -104,8 +107,10 @@ class DatasetNLP(Dataset):
         self.desc += self.cols_label
 
     def run_transform(self):
-        # TODO: transformation untokenized columns is needed
-        pass
+        if len(self.bool_col) == 0:
+            return
+        for col in self.bool_col:
+            self.tensors.append(torch.tensor(self.input_df[col].tolist()))
 
     def export_tensors_with_desc(self):
         return self.tensors, self.desc
@@ -121,5 +126,3 @@ class DatasetNLP(Dataset):
 
     def __len__(self):
         return self.tensors[0].size(0)
-
-

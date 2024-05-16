@@ -27,20 +27,23 @@ class Evaluator:
         self.device = get_device()
     
     def run(self, cur_model : nn.Module):
-        resMgr = ResultsMgr(num_epochs=1)
-        cur_model.eval()
+        resMgr = ResultsMgr(num_epochs=1)        
         # Predict
         with torch.no_grad():
             resMgr.start_this_epoch()
             for _, batch in enumerate(self.data_loader):
                 b_input_ids, b_input_mask, b_labels = send_to_device(batch, self.device)
-                result = cur_model(b_input_ids, b_input_mask)
-                sup_loss = self.loss_func(result.logits, b_labels)
+                logits = self.calcualte_loss(cur_model, b_input_ids, b_input_mask)
+                sup_loss = self.loss_func(logits, b_labels)
                 sup_loss = torch.mean(sup_loss)
-                resMgr.step(result.logits, b_labels, sup_loss)
+                resMgr.step(logits, b_labels, sup_loss)
             resMgr.end_this_epoch(verbose=False)
         val_acc = resMgr.get_agg_res(1)['accuracy']
         print(f'Validation accuracy is: {val_acc.item()}.\n')
+
+    def calcualte_loss(self, model, input_ids, input_mask, **kwargs):
+        result = model(input_ids, input_mask)
+        return result.logits
 
 class Trainer:
     '''
@@ -60,6 +63,7 @@ class Trainer:
         self.scheduler = None
         self.device = get_device()
         self.model.to(self.device)
+        self.num_labels = self.model.num_labels
         # results manager
         self.resMgr = ResultsMgr(report_freq=report_freq)
         # evaluator on validation set
@@ -84,6 +88,7 @@ class Trainer:
         # start epoch
         for _ in trange(epochs, desc = "Epoch"):
             self.model.train()
+            self.set_status_of_aux_models(to_train=True) # change staus of auxiliary models
             self.resMgr.start_this_epoch()
             for iter, batch in enumerate(self.data_loaders[self.generate_batch_based_on]):
                 # clear out the gradients
@@ -103,6 +108,8 @@ class Trainer:
             # summary training results
             self.resMgr.end_this_epoch()
             # evaluation step (validation)
+            self.model.eval()
+            self.set_status_of_aux_models(to_train=False)
             self.eval.run(self.model)
             # save model
             if save_model_freq != -1 and self.resMgr.get_epoch_idx() % save_model_freq == 0:
@@ -120,6 +127,9 @@ class Trainer:
             num_of_batches = len(self.data_loaders[self.generate_batch_based_on])
             self.scheduler = self.optimizer.compile_schedule(num_epochs * num_of_batches, schedule_type, num_warmup_steps)
     
+    def set_status_of_aux_models(self, to_train : Optional[bool]=True):
+        pass
+
     def calcualte_loss(self, batch_idx : int, batch : Any):        
         # 'batch' contains [0]: input ids; [1]: attention masks; [2]: labels
         b_input_ids, b_input_mask, b_labels = send_to_device(batch, self.device)        
@@ -129,6 +139,6 @@ class Trainer:
         sup_loss = self.loss_func(result.logits, b_labels)
         sup_loss = torch.mean(sup_loss)
         # return total loss, sup result (.logits), sup labels
-        return sup_loss, result, b_labels
+        return sup_loss, result.logits, b_labels
     
     

@@ -26,7 +26,7 @@ class TrainerUDA(Trainer):
                  data_loader: dict, 
                  loss_func_dict: dict[Callable], # sup/unsup
                  optimizer: Optimizer, 
-                 report_freq: int | None = 100,
+                 report_freq: Optional[int]= 100,
                  tsa_schedule : Optional[str]="linear",
                  uda_confidence_thresh : Optional[float]=0.50,
                  uda_softmax_temp : Optional[float]=0.85,
@@ -46,20 +46,6 @@ class TrainerUDA(Trainer):
         # in the meanwhile, we repeated generate data fraom labeled ones
         self.train_sup_dataloader_iter = repeat_dataloader(self.data_loaders[DataLoaderType.TRAINING])
         self.generate_batch_based_on = DataLoaderType.TRAINING_UNLABELED
-
-    @classmethod
-    def get_tsa_thresh(cls, schedule, global_step, num_train_steps, start, end):
-        training_progress = torch.tensor(float(global_step) / float(num_train_steps))
-        if schedule == "linear":
-            threshold = training_progress
-        elif schedule == "exp":
-            scale = 5
-            threshold = torch.exp((training_progress - 1) * scale)
-        elif schedule == "log":
-            scale = 5
-            threshold = 1 - torch.exp((-training_progress) * scale)
-        output = threshold * (end - start) + start
-        return output
 
     # uda loss computation logic
     def calcualte_loss(self, 
@@ -120,6 +106,20 @@ class TrainerUDA(Trainer):
         
         # return total loss, sup result (.logits), sup labels
         return final_loss, result.logits, b_labels
+    
+    @classmethod
+    def get_tsa_thresh(cls, schedule, global_step, num_train_steps, start, end):
+        training_progress = torch.tensor(float(global_step) / float(num_train_steps))
+        if schedule == "linear":
+            threshold = training_progress
+        elif schedule == "exp":
+            scale = 5
+            threshold = torch.exp((training_progress - 1) * scale)
+        elif schedule == "log":
+            scale = 5
+            threshold = 1 - torch.exp((-training_progress) * scale)
+        output = threshold * (end - start) + start
+        return output
 
 
 
