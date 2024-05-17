@@ -9,6 +9,7 @@ from typing import Any, Optional, Union
 # torch
 import torch
 from torch import nn
+import torch.nn.functional as F
 from torch.types import Number
 # Peft
 from peft import PeftModel
@@ -24,13 +25,40 @@ class DataLoaderType(Enum):
 class LossFuncType(Enum):
     CROSS_ENTROPY = 1
     KL_DIV = 2
+    PROB_MEAN_SQ = 3
+
+def linear_rampup(current, rampup_length):
+    if rampup_length == 0:
+        return 1.0
+    else:
+        current = np.clip(current / rampup_length, 0.0, 1.0)
+        return float(current)
+
+class ProbMeanSq(object):
+    '''
+    Mean square loss of probability distribution:
+    || dist_p - dist_q ||_2
+    where dist_p/dist_q are both finite-dimensional vectors over number of classes
+    '''
+    def __init__(self, lambda_u):        
+        self.lambda_u = lambda_u
+
+    def __call__(self, outputs_x, targets_x, outputs_u, targets_u, epoch, num_epochs):
+        probs_u = torch.softmax(outputs_u, dim=1)
+
+        Lx = -torch.mean(torch.sum(F.log_softmax(outputs_x, dim=1) * targets_x, dim=1))
+        Lu = torch.mean((probs_u - targets_u)**2)
+
+        return Lx, Lu, self.lambda_u * linear_rampup(epoch, num_epochs)
 
 ### loss function getter
-def get_loss_functions(loss_func_type : LossFuncType, reduce : Optional[str]='mean'):
+def get_loss_functions(loss_func_type : LossFuncType, reduce : Optional[str]='mean', **kwargs):
     if loss_func_type == LossFuncType.CROSS_ENTROPY:
         return nn.CrossEntropyLoss(reduction=reduce)
     elif loss_func_type == LossFuncType.KL_DIV:
         return nn.KLDivLoss(reduction=reduce)
+    elif loss_func_type == LossFuncType.PROB_MEAN_SQ:
+        return ProbMeanSq(kwargs['lambda_u'])
     else:
         raise Exception("Unsupported loss function type")
 
@@ -45,21 +73,46 @@ def send_to_device(data : Any, device : Any):
     return [d.to(device) for d in data]
 
 ### model saving
-def save_model(epoch : int, model_name : str, model : nn.Module, path : Optional[str]=""):
-  if isinstance(model, PeftModel):
-      model.save_pretrained(os.path.join(path, f'{model_name}_epcoh_{epoch}'))
-  else:
-    export_path = os.path.join(path, f'{model_name}_epoch_{epoch}.pt')
-    torch.save(model.state_dict(), export_path)
+def save_model(
+        epoch : int, 
+        model_name : str, 
+        model : nn.Module, 
+        path : Optional[str]="", 
+        aux_models : Optional[list[nn.Module]]=[]):
+    if isinstance(model, PeftModel):
+        model.save_pretrained(os.path.join(path, f'{model_name}_epoch_{epoch}'))
+    else:
+        export_path = os.path.join(path, f'{model_name}_epoch_{epoch}.pt')
+        torch.save(model.state_dict(), export_path)
+    
+    if len(aux_models) != 0:
+        for idx, m in enumerate(aux_models):
+            if isinstance(m, PeftModel):
+                m.save_pretrained(os.path.join(path, f'{model_name}_aux_{idx+1}_epoch_{epoch}'))
+            else:
+                export_path = os.path.join(path, f'{model_name}_aux_{idx+1}_epoch_{epoch}.pt')
+                torch.save(m.state_dict(), export_path)
 
 ### model loading
-def load_model(epoch : int, model_name : str, model, path : Optional[str]="", is_peft : Optional[bool]=False):
-  if is_peft:
-      import_path = os.path.join(path, f'{model_name}_epcoh_{epoch}')
-      PeftModel.from_pretrained(model, import_path, is_trainable=True)
-  else:
-    import_path = os.path.join(path, f'{model_name}_epoch_{epoch}.pt')
-    model.load_state_dict(torch.load(import_path))
+def load_model(
+        epoch : int, 
+        model_name : str, 
+        model, path : Optional[str]="", 
+        is_peft : Optional[bool]=False, 
+        aux_id : Optional[int]=-1):
+
+    if is_peft:
+        if aux_id == -1:
+            import_path = os.path.join(path, f'{model_name}_epoch_{epoch}')
+        else:
+            import_path = os.path.join(path, f'{model_name}_aux_{aux_id}_epoch_{epoch}')
+        PeftModel.from_pretrained(model, import_path, is_trainable=True)
+    else:
+        if aux_id == -1:
+            import_path = os.path.join(path, f'{model_name}_epoch_{epoch}.pt')
+        else:
+            import_path = os.path.join(path, f'{model_name}_aux_{aux_id}_epoch_{epoch}.pt')
+        model.load_state_dict(torch.load(import_path))
 
 ### results manager
 class ResultsMgr:
@@ -77,6 +130,9 @@ class ResultsMgr:
     def set_num_epochs(self, num_epochs : int):
         self.num_epochs = num_epochs
 
+    def get_cur_epoch(self):
+        return self.epoch_idx
+    
     def start_this_epoch(self):
         self.this_epoch_step = 0
         # this epoch container

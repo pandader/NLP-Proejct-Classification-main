@@ -26,7 +26,7 @@ class TrainerUDA(Trainer):
                  data_loader: dict, 
                  loss_func_dict: dict[Callable], # sup/unsup
                  optimizer: Optimizer, 
-                 report_freq: int | None = 100,
+                 report_freq: Optional[int]= 100,
                  tsa_schedule : Optional[str]="linear",
                  uda_confidence_thresh : Optional[float]=0.50,
                  uda_softmax_temp : Optional[float]=0.85,
@@ -41,26 +41,11 @@ class TrainerUDA(Trainer):
         self.uda_confidence_thresh = uda_confidence_thresh
         self.uda_softmax_temp = uda_softmax_temp
         self.loss_fun_unsup = loss_func_dict['unsup']
-        self.loss_fun = loss_func_dict['sup']
         # since labeled data is << unlabeled data
         # the batches will be generated from these unlabeled ones
         # in the meanwhile, we repeated generate data fraom labeled ones
         self.train_sup_dataloader_iter = repeat_dataloader(self.data_loaders[DataLoaderType.TRAINING])
         self.generate_batch_based_on = DataLoaderType.TRAINING_UNLABELED
-
-    @classmethod
-    def get_tsa_thresh(cls, schedule, global_step, num_train_steps, start, end):
-        training_progress = torch.tensor(float(global_step) / float(num_train_steps))
-        if schedule == "linear":
-            threshold = training_progress
-        elif schedule == "exp":
-            scale = 5
-            threshold = torch.exp((training_progress - 1) * scale)
-        elif schedule == "log":
-            scale = 5
-            threshold = 1 - torch.exp((-training_progress) * scale)
-        output = threshold * (end - start) + start
-        return output
 
     # uda loss computation logic
     def calcualte_loss(self, 
@@ -88,7 +73,7 @@ class TrainerUDA(Trainer):
         tsa_thresh = TrainerUDA.get_tsa_thresh(
             self.tsa_schedule, 
             self.resMgr.get_epoch_idx() * num_batches + batch_idx,
-            self.resMgr.num_epochs * num_batches, 
+            self.resMgr.get_num_epochs() * num_batches, 
             start=1./result.logits.shape[-1], 
             end=1).to(self.device)
         larger_than_threshold = torch.exp(-sup_loss) > tsa_thresh   # prob = exp(log_prob), prob > tsa_threshold
@@ -121,6 +106,20 @@ class TrainerUDA(Trainer):
         
         # return total loss, sup result (.logits), sup labels
         return final_loss, result.logits[:sup_size], b_labels
+    
+    @classmethod
+    def get_tsa_thresh(cls, schedule, global_step, num_train_steps, start, end):
+        training_progress = torch.tensor(float(global_step) / float(num_train_steps))
+        if schedule == "linear":
+            threshold = training_progress
+        elif schedule == "exp":
+            scale = 5
+            threshold = torch.exp((training_progress - 1) * scale)
+        elif schedule == "log":
+            scale = 5
+            threshold = 1 - torch.exp((-training_progress) * scale)
+        output = threshold * (end - start) + start
+        return output
 
 
 

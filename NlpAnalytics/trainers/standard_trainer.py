@@ -9,7 +9,6 @@ from typing import Optional, Any, Callable
 import torch
 from torch import nn
 from torch.optim.optimizer import Optimizer
-from torch.optim.lr_scheduler import LambdaLR
 from torch.utils.data.dataloader import DataLoader
 # local
 from .trainer_utilities import (send_to_device, save_model, DataLoaderType, ResultsMgr)
@@ -26,7 +25,7 @@ class Evaluator:
         self.loss_func = loss_func
         self.device = get_device()
     
-    def run(self, cur_model : nn.Module):
+    def run(self, cur_model : nn.Module, aux_models : list[nn.Module]):
         resMgr = ResultsMgr(num_epochs=1)
         cur_model.eval()
         # Predict
@@ -66,6 +65,8 @@ class Trainer:
         self.eval = Evaluator(self.loss_func,self.data_loaders[DataLoaderType.VALIDATION])
         # default: generate batch based on trainnig data
         self.generate_batch_based_on = DataLoaderType.TRAINING
+        # default: no auxiliary model
+        self.aux_models = []
 
     def train(self, 
               epochs : int, 
@@ -87,11 +88,15 @@ class Trainer:
             self.resMgr.start_this_epoch()
             for iter, batch in enumerate(self.data_loaders[self.generate_batch_based_on]):
                 # clear out the gradients
-                self.optimizer.zero_grad()
+                self.optimizer.zero_grad()                
+                # preprocess
+                self.preprocess()
                 # calculate loss
                 loss, sup_result, sup_labels = self.calcualte_loss(iter, batch)
                 # backward pass
                 loss.backward()
+                # postprocess
+                self.postprocess()
                 # update paras
                 self.optimizer.step()
                 # scheduler (if applicable)
@@ -103,11 +108,11 @@ class Trainer:
             # summary training results
             self.resMgr.end_this_epoch()
             # evaluation step (validation)
-            self.eval.run(self.model)
+            self.eval.run(self.model, self.aux_models)
             # save model
             if save_model_freq != -1 and self.resMgr.get_epoch_idx() % save_model_freq == 0:
-                save_model(self.resMgr.get_epoch_idx(), model_name, self.model, save_loc)
-    
+                save_model(self.resMgr.get_epoch_idx(), model_name, self.model, save_loc, self.aux_models)
+
     def set_scheduler(self, 
                       num_epochs : int,
                       schedule_type : SchedulerType, 
@@ -131,4 +136,11 @@ class Trainer:
         # return total loss, sup result (.logits), sup labels
         return sup_loss, result.logits, b_labels
     
+    def preprocess(self):
+        # adds flexibility: inject preprocess before calculateLoss
+        pass
+
+    def postprocess(self):
+        # adds flexibility: inject postprocess after calculateLoss
+        pass
     

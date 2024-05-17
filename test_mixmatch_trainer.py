@@ -1,11 +1,11 @@
 import os
 import pandas as pd
-# torch
 from torch import Generator
-from peft import LoraConfig, TaskType
 from torch.utils.data import DataLoader, RandomSampler
 # transformer
-from transformers.optimization import SchedulerType
+from transformers.optimization import AdamW, SchedulerType
+# peft
+from peft import LoraConfig, TaskType
 # native
 from NlpAnalytics import *
 
@@ -37,20 +37,20 @@ if __name__ == '__main__':
     }
 
     ### Model & Optimization
-    loader = BertClassifierLoader(ClassifierType.BERT_CLASSIFIER_HF, "bert-base-uncased", 2, 0.1, load_tokenizer=True)
-    loss_sup = get_loss_functions(LossFuncType.CROSS_ENTROPY)
-    loss_unsup = get_loss_functions(LossFuncType.KL_DIV)
-    loss_dict = {'sup':loss_sup, 'unsup':loss_unsup}
+    num_labels = 2
+    # it has to be NATIVE one not HF [TODO: make it compatible with _HF]
+    loader = BertClassifierLoader(ClassifierType.BERT_CLASSIFIER, "bert-base-uncased", num_labels, 0.1)
     if not USE_LORA:
-        optimizer = AdamNLP.newNLPAdam(loader.model, {'embeddings':True, 'encoder': 9}, lr = 2e-4)
+        optimizer = AdamNLP.newNLPAdam(loader.model, {'embeddings':True, 'encoder': 9}, lr = 0.0005)
         model = optimizer.get_model_transformed()
     else:
         lora_config = LoraConfig(task_type=TaskType.SEQ_CLS,target_modules=["query", "key", "value"], r=1, lora_alpha=1, lora_dropout=0.1)
         optimizer = AdamNLP.newNLPAdam_LORA(loader.model, lora_config)
         model = optimizer.get_model_transformed()
+    # aux model
+    aux_model = MultiLabelClassifier(model.bert.config.hidden_size, num_labels)
+    aux_optimizer = AdamW(aux_model.parameters(), lr=0.0005)
 
     ### Training
-    trainer = TrainerUDA(model, datamodeler, loss_dict, optimizer)
-    trainer.train(2, schedule_type = SchedulerType.CONSTANT, save_model_freq=-1)
-
-        
+    trainer = TrainerMixAndMatch(model, aux_model, datamodeler, optimizer, aux_optimizer)
+    trainer.train(1, schedule_type = SchedulerType.CONSTANT)
