@@ -16,7 +16,8 @@ In addition, we provide two types of text data augmentation methods: 1) backtran
 
 <p align="center">
 <img src="images\workflow.png" width="700">
-Figure 1. Project Architecture/Workflow
+
+Figure 1. The architecture, and main components of this project
 </p>
 
 ## 3. Theory
@@ -45,6 +46,7 @@ where $\lambda(t)$ is a ramp function that gradually increases the importance of
 
 <p align="left">
   <img src="images\uda.png"/>
+  
   Figure 2. Taken from paper "Unsupervised Data Augmentation for Consistency Training". The right section showcases the mechanism to enforce consistent predictions between unlabeled data and augmenetation of them.
 </p>
 
@@ -64,6 +66,7 @@ Before delving into MixMatch, let's first brief another important technique when
 
 <p align="left">
   <img src="images\mixmatch.png"/>
+
   Figure 3. Taken from paper "MixMatch: A Holistic Approach to Semi-Supervised Learning".
 </p>
 
