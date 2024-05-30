@@ -8,11 +8,31 @@ import numpy as np
 import pandas as pd
 from random import sample
 from typing import Any, Optional, Callable
+from torch import LongTensor, FloatTensor, eq
 # torch
 import torch
 # huggingface
-from transformers import BloomForCausalLM
-from transformers import BloomTokenizerFast
+from transformers import AutoTokenizer, AutoModelForCausalLM
+from transformers import StoppingCriteria, StoppingCriteriaList
+
+# from huggingface_hub import login
+# login(token = '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')
+os.environ["HF_TOKEN"] = "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"
+
+class StopOnTokens(StoppingCriteria):
+
+    def __init__(self, stop_token_ids:list):
+        self.stop_token_ids = stop_token_ids
+
+    def __call__(self, input_ids: LongTensor, scores: FloatTensor, **kwargs) -> bool:
+        for stop_ids in self.stop_token_ids:
+            print(f"Testing {input_ids[0][-len(stop_ids[0])+1:]} against {stop_ids[0][1:]}")
+            if eq(input_ids[0][-len(stop_ids[0])+1:], stop_ids[0][1:]).all():
+                return True
+        return False
+
+
+
 
 
 class GenAIModelLoader:
@@ -20,7 +40,7 @@ class GenAIModelLoader:
     ### https://huggingface.co/bigscience
     
     def __init__(self, 
-                 model_name : Optional[str]='bigscience/bloom-7b1', 
+                 model_name : Optional[str]='meta-llama/Meta-Llama-3-8B-instruct', 
                  device : Optional[Any]=None,
                  root_path : Optional[str]="",
                  file_name : Optional[str]="generated_text"):
@@ -28,7 +48,7 @@ class GenAIModelLoader:
         """ Load genAI model and its tokenizer
 
         Args:
-            model_name (str, optional): which gpt model. Defaults to 'bigscience/bloom-7b1'.
+            model_name (str, optional): which gpt model. Defaults to 'meta-llama/Meta-Llama-3-8B-instruct'.
             device (Any, optional): 'cpu', 'cuda', 'mps'. Defaults to None.
             root_path (str, optional): root path to save data. Defaults to "".
             file_name (str, optional): file name of the save data. Defaults to "generated_text".
@@ -38,35 +58,41 @@ class GenAIModelLoader:
         self.path = root_path
         self.file_name = file_name
         # model/tokenizer downloading
-        self.tokenizer = BloomTokenizerFast.from_pretrained(model_name) 
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name) 
         if self.device is None:
-            self.model = BloomForCausalLM.from_pretrained(model_name, pad_token_id=self.tokenizer.eos_token_id)
+            self.model = AutoModelForCausalLM.from_pretrained(model_name, pad_token_id=self.tokenizer.eos_token_id)
         else:
-            self.model = BloomForCausalLM.from_pretrained(model_name, pad_token_id=self.tokenizer.eos_token_id).to(self.device)
+            self.model = AutoModelForCausalLM.from_pretrained(model_name, pad_token_id=self.tokenizer.eos_token_id).to(self.device)
 
     def run_uda_generation(self, 
                            text_input : list, 
-                           psuedo_label : int, 
+                           psuedo_label : str, 
                            prompt_template : Callable,
+                           stop_list: list,
                            export_freq : Optional[int]=100,
-                           max_new_tokens : Optional[int]=128, 
+                           max_new_tokens : Optional[int]=200,
                            do_sample : Optional[bool]=True, 
-                           top_k : Optional[int]=40, 
+                           top_k : Optional[int]=50, 
                            top_p : Optional[float]=0.9, 
-                           temperature : Optional[float]=0.9):
+                           temperature : Optional[float]=0.1
+                           ):
         
         count = 1
         recording_loc, recording_all = [], []
         export_freq = min(export_freq, len(text_input))
+        stop_token_ids = [self.tokenizer(x,  return_tensors='pt', add_special_tokens=False)['input_ids'] for x in stop_list]
+        stop_token_ids = [LongTensor(x).to(self.device) for x in stop_token_ids]
         for i, text in enumerate(text_input):
             sample_prompt = prompt_template(text, psuedo_label)
             if self.device is None:
-                tokenized_inputs = self.tokenizer.encode(sample_prompt, return_tensors='pt')
+                tokenized_inputs = self.tokenizer(sample_prompt, return_tensors='pt')
             else:
-                tokenized_inputs = self.tokenizer.encode(sample_prompt, return_tensors='pt').to(self.device)
+                tokenized_inputs = self.tokenizer(sample_prompt, return_tensors='pt').to(self.device)
             # text generation
             outputs = self.model.generate(
-                tokenized_inputs, max_new_tokens=max_new_tokens, do_sample=do_sample, top_k=top_k, top_p=top_p, temperature=temperature)
+                **tokenized_inputs, max_new_tokens=max_new_tokens, do_sample=do_sample, top_k=top_k, top_p=top_p,
+                temperature=temperature, stopping_criteria=StoppingCriteriaList([StopOnTokens(stop_token_ids)]))
+            
             # Decooding to text
             output_text = self.tokenizer.decode(outputs[0], skip_special_tokens=True)
             # recording
