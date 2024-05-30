@@ -1,7 +1,16 @@
 # Copyright 2024 @ Lun Li
 #
 # Summary:
-#     Text generation via GenAI Model
+#     Text generation via genAI model provided by hugging face.
+#     In particular, we follow the idea in UDG "Towards Zero-Label Language Learning"
+#       https://arxiv.org/pdf/2109.09193
+#     Instead of directly generating labels (Y) for unlabeled text (X), we leverage 
+#     genAI model to generate X' via zero/few-short learning. We then use 
+#     semi-supervised framework (mixmatch/uda) to train the classifier.
+#
+# Remark:
+# create a huggingface account and fill out the form of llama3 model
+# os.environ["HF_TOKEN"] = xxxxxx
 
 import os
 import numpy as np
@@ -15,10 +24,6 @@ import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from transformers import StoppingCriteria, StoppingCriteriaList
 
-# from huggingface_hub import login
-# login(token = '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')
-os.environ["HF_TOKEN"] = "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"
-
 class StopOnTokens(StoppingCriteria):
 
     def __init__(self, stop_token_ids:list):
@@ -31,13 +36,9 @@ class StopOnTokens(StoppingCriteria):
                 return True
         return False
 
-
-
-
-
 class GenAIModelLoader:
-    ### BLOOM model seems to have the closest performance to GPT3 models
-    ### https://huggingface.co/bigscience
+    
+    ### wrap around hugging face gen ai model. Default to Llama 3
     
     def __init__(self, 
                  model_name : Optional[str]='meta-llama/Meta-Llama-3-8B-instruct', 

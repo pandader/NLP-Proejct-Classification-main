@@ -1,6 +1,8 @@
 # Copyright 2024 @ Lun Li
 #
-# Summary: A semi-supervised framework 
+# Summary: A semi-supervised framework by following "MixMatch: A Holistic Approach to Semi-Supervised Learning"
+#          https://arxiv.org/pdf/1905.02249
+
 import copy
 import numpy as np
 from torch.utils.data.dataloader import DataLoader

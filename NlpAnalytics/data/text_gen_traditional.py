@@ -4,21 +4,18 @@
 #     Text generation via NLPAUG package, base on random word insert and back translation.
 #     you can add more augmentation way on character/word/sentence level. Go to check NLPAUG
 #     official github.
-
+#     https://github.com/makcedward/nlpaug
 
 # load package
 import os
 import numpy as np
 import pandas as pd
 from typing import Optional, Union, Any
-# NLPAUG package
-
-
+# nlpaug
 import nlpaug.augmenter.word as naw
 import nlpaug.augmenter.sentence as nas
 import nlpaug.flow as naf
 from nlpaug.util import Action
-
 
 class TextGen():
     def __init__(self,from_model_name: Optional[str] = None,
