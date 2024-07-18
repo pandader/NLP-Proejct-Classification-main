@@ -83,6 +83,7 @@ class ResultsMgr:
         self.preds = []
         self.labels = []
         self.sup_loss = []
+        self.unsup_loss = []
 
     def step(self, model_output : torch.Tensor, labels : torch.Tensor, loss : Union[None, torch.Tensor], **kwargs):
         # gather results for this batch
