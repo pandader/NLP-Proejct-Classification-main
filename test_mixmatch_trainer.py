@@ -53,4 +53,4 @@ if __name__ == '__main__':
 
     ### Training
     trainer = TrainerMixAndMatch(model, aux_model, datamodeler, optimizer, aux_optimizer)
-    trainer.train(1, schedule_type = SchedulerType.CONSTANT)
+    trainer.train(1, schedule_type = SchedulerType.CONSTANT, save_model_freq=1)

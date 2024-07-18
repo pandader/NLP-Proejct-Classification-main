@@ -1,18 +1,19 @@
 # Copyright 2024 @ Lun Li
 #
 # Summary:
-#     1. Loader to set up HF Vanilla/Pretrained Bert Models;
-#     2. Loader to set up HF BERT with Classification Head as well as our own customized BERT + 
+#     1. Load HF Vanilla/Pretrained Bert Models
+#     2. Load HF BERT with classification head
+#     3. Load HF BERT with customizable classification head
 
 # MULTILABEL-CLASSIFIER
 from enum import Enum
-from typing import Any, Optional, Union, Tuple
+from typing import Any, Optional
 # torch
 import torch
 from torch import nn
 # huggingface
-from transformers import BertPreTrainedModel, BertConfig, BertTokenizerFast, BertModel, BertForSequenceClassification, BertForMaskedLM
 from transformers.modeling_outputs import SequenceClassifierOutput
+from transformers import (BertPreTrainedModel, BertConfig, BertTokenizerFast, BertModel, BertForSequenceClassification)
 
 ### BASE BERT MODEL
 ### load model and corresponding tokenizer from huggingface
@@ -31,6 +32,7 @@ class BertLoader:
         # bert model
         if bert_name == "":
             self.model_ = BertModel(self.config_)
+            print('Warning: loading BERT with initial parameters == 0.')
         else:
             self.config_ = BertConfig.from_pretrained(bert_name, output_hidden_states=True, output_attentions=True)
             self.model_ = BertModel.from_pretrained(bert_name, self.config_)
@@ -47,13 +49,11 @@ class BertLoader:
     def model(self):
         return self.model_
 
-
 ### MULTI-LABEL CLASSIFICATION HEAD
 ### if no hidden_dims, it recovers the simple classifier as in BertForSequenceClassification
 class MultiLabelClassifier(nn.Module):
     def __init__(self, input_dim: int, num_labels: int, hidden_dims: Optional[list]=list(), dropout: Optional[float]=0.1):
         super().__init__()
-        cls_name = MultiLabelClassifier.__name__
         self.num_labels_ = num_labels
         self.sequential = nn.Sequential()
         structure = [input_dim] + hidden_dims + [self.num_labels_]
@@ -61,7 +61,7 @@ class MultiLabelClassifier(nn.Module):
             self.sequential.add_module(f'dropout_{i}', nn.Dropout(dropout))
             self.sequential.add_module(f'linear_{i}', nn.Linear(structure[i], structure[i+1]))
             if i == len(structure) - 2:
-                # don't apply activation for the last layer
+                # not apply activation for the last layer
                 break
             self.sequential.add_module(f'activation_{i}', nn.ReLU())
     
@@ -72,7 +72,9 @@ class MultiLabelClassifier(nn.Module):
     def forward(self, x: torch.Tensor):
         return self.sequential(x)
 
+### This is a customizable BERT (user can 'configure' MultiLabelClassifier class above)
 class BertClassifier(BertPreTrainedModel):
+
     def __init__(self, 
                  bert_name: Optional[str]="bert-base-uncased", # pretriained model name
                  num_labels: Optional[int]=2, # number of output labels
@@ -81,6 +83,7 @@ class BertClassifier(BertPreTrainedModel):
                  config_override: Optional[Any]=None, # use user provided config
                  load_tokenizer: Optional[bool]=False # load corresponding tokenizer
                  ):
+
         bert_config = BertConfig.from_pretrained(bert_name) if config_override is None else config_override
         # if load tokenizer
         self.tokenizer_ = BertTokenizerFast.from_pretrained(bert_name) if load_tokenizer else None
@@ -129,13 +132,13 @@ class BertClassifier(BertPreTrainedModel):
         logits = self.classifier(outputs.pooler_output)
         return SequenceClassifierOutput(logits=logits, hidden_states=(outputs.pooler_output,))
 
-### MODEL SELECTOR
-
+### BERT Classifier SELECTOR
 class ClassifierType(Enum):
+
     BERT_CLASSIFIER_HF = 1
     BERT_CLASSIFIER = 2
-    BERT_MLM_HF = 3
 
+### BERT + Classification head Loader
 class BertClassifierLoader:
 
     def __init__(self, 
@@ -152,14 +155,11 @@ class BertClassifierLoader:
         if head_type == ClassifierType.BERT_CLASSIFIER:
             self.model_ = BertClassifier(bert_name, num_labels, dropout, hidden_dims, config_override, load_tokenizer)
             self.tokenizer_ = self.model_.tokenizer
-        else:
+        elif head_type == ClassifierType.BERT_CLASSIFIER_HF:
             # HF model doesn't support multi-layer classifier
             assert(len(hidden_dims) == 0)
             self.tokenizer_ = BertTokenizerFast.from_pretrained(bert_name) if load_tokenizer else None
-            if head_type == ClassifierType.BERT_CLASSIFIER_HF:
-                self.model_ = BertForSequenceClassification.from_pretrained(bert_name, num_labels=num_labels, classifier_dropout=dropout)
-            elif head_type == ClassifierType.BERT_MLM_HF:
-                self.model_ = BertForMaskedLM.from_pretrained(bert_name)
+            self.model_ = BertForSequenceClassification.from_pretrained(bert_name, num_labels=num_labels, classifier_dropout=dropout)
 
     @property
     def tokenizer(self):
@@ -168,11 +168,3 @@ class BertClassifierLoader:
     @property
     def model(self):
         return self.model_
-
-
-
-
-
-
-
-

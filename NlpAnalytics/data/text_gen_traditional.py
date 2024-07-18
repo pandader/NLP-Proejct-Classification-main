@@ -1,39 +1,57 @@
 # Copyright 2024 @ Lun Li
 #
 # Summary:
-#     Text generation via NLPAUG package, base on random word insert and back translation.
-#     you can add more augmentation way on character/word/sentence level. Go to check NLPAUG
-#     official github.
-#     https://github.com/makcedward/nlpaug
+#     We improve the NLPAUG package (https://github.com/makcedward/nlpaug) 
+#     by allowing vectorized augmentation
 
 # load package
-import os
-import numpy as np
 import pandas as pd
-from typing import Optional, Union, Any
+from typing import Optional
 # nlpaug
 import nlpaug.augmenter.word as naw
-import nlpaug.augmenter.sentence as nas
-import nlpaug.flow as naf
 from nlpaug.util import Action
+from nlpaug.flow import Pipeline
+# native
+from ..utilities.utilities import (get_device)
 
-class TextGen():
-    def __init__(self,from_model_name: Optional[str] = None,
-                 to_model_name: Optional[str] = None):
-        self.from_translation = from_model_name
-        self.back_translation = to_model_name
 
-    def TextAug(self,input_text: Union[str,list], num_aug = 2, num_thread: Optional[Any] = None):
-        result_list = {}
-        aug = naf.Sometimes([
-            naw.RandomWordAug(),
-            naw.BackTranslationAug(from_model_name=self.from_translation, 
-                                   to_model_name=self.back_translation)])
-        
-        if isinstance(input_text, list):
-            for each in input_text:
-                result_list[each] = aug.augment(each, n = num_aug, num_thread = 10)
-            return result_list
-        else:
-            return aug.augment(input_text, n = num_aug)
+### default config
+TEXT_GEN_DEFAULT_CONFIG = {
+    'name' : 'Somtimes_Piepline',
+    'aug_p' : 0.8,
+    'verbose' : 0,
+    'include_detail' : False,
+    'flow' : [
+        naw.RandomWordAug(),
+        naw.BackTranslationAug(
+        from_model_name='Helsinki-NLP/opus-mt-en-fr',
+        to_model_name='Helsinki-NLP/opus-mt-fr-en',
+        device=get_device())
+    ]
+}
 
+### TextAug
+class TextAug(Pipeline):
+    
+    def __init__(self, config : Optional[dict]=TEXT_GEN_DEFAULT_CONFIG):
+        Pipeline.__init__(self, 
+                          name=config['name'], 
+                          action=Action.SOMETIMES, 
+                          flow=config['flow'], 
+                          aug_p=config['aug_p'],
+                          include_detail=config['include_detail'], 
+                          verbose=config['verbose'])
+    
+    def draw(self):
+        return self.aug_p > self.prob()
+
+    # override
+    # we remove thread option, the parallellism doesn't work with joblibs
+    def augment(self, data : list, n : Optional[int]=1):
+        augmented_results = [self._augment(data) for _ in range(n)]
+        augmented_results = [r for sub_results in augmented_results for r in sub_results if len(r) > 0]
+        this_df = pd.DataFrame(columns=['org', 'aug1', 'aug2'])
+        this_df['org'] = data
+        this_df['aug1'] = augmented_results[0]
+        this_df['aug2'] = augmented_results[1]
+        return this_df

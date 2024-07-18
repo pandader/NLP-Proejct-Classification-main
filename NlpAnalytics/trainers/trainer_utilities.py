@@ -5,12 +5,11 @@
 import os
 import numpy as np
 from enum import Enum
-from typing import Any, Optional, Union
+from typing import Any, Optional, Union, Tuple
 # torch
 import torch
 from torch import nn
 import torch.nn.functional as F
-from torch.types import Number
 # Peft
 from peft import PeftModel
 
@@ -79,6 +78,7 @@ def save_model(
         model : nn.Module, 
         path : Optional[str]="", 
         aux_models : Optional[list[nn.Module]]=[]):
+
     if isinstance(model, PeftModel):
         model.save_pretrained(os.path.join(path, f'{model_name}_epoch_{epoch}'))
     else:
@@ -139,23 +139,28 @@ class ResultsMgr:
         self.preds = []
         self.labels = []
         self.sup_loss = []
+        self.unsup_loss = []
 
-    def step(self, model_output : torch.Tensor, labels : torch.Tensor, loss : Union[None, torch.Tensor], **kwargs):
+    def step(self, model_output : torch.Tensor, labels : torch.Tensor, loss : Union[Tuple, list], **kwargs):
         # gather results for this batch
         # list of tensors
         self.preds.append(torch.argmax(model_output.detach(), dim=1).to("cpu"))
-        
         self.labels.append(labels.to("cpu"))
         # list of numbers
         if loss is not None:
-            self.sup_loss.append(loss.item())
+            self.sup_loss.append(loss[0].item())
+            if loss[1] is not None:
+                self.unsup_loss.append(loss[1].item())
         # increment
         self.this_epoch_step += 1
     
     def report(self, cur_step):
         if self.report_freq != -1 and (cur_step + 1) % self.report_freq == 0:
             # report sup-loss
-            print(f'At step {cur_step + 1}, the training loss is {np.mean(self.sup_loss)}.')
+            sup_loss_str = f'At step {cur_step + 1}, the training (sup)loss is {np.mean(self.sup_loss)}'
+            # report unsup-loss (if applicable)
+            unsup_loss_str = '' if len(self.unsup_loss) == 0 else f', the training unsup-loss is {np.mean(self.unsup_loss)}'
+            print(sup_loss_str + unsup_loss_str + '.')
 
     def end_this_epoch(self, verbose : Optional[bool]=True):
         preds_ = torch.concat(self.preds)
@@ -172,7 +177,6 @@ class ResultsMgr:
             print(f'For epoch {self.epoch_idx}, the mean sup loss is: {loss}, and accuracy is: {accuracy}.')
     
     ### some getters
-
     def get_agg_res(self, epoch : Optional[int]=-1):
         assert(epoch <= self.num_epochs)
         if epoch == -1:

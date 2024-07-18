@@ -16,8 +16,7 @@ import torch.nn.functional as F
 from torch.optim.optimizer import Optimizer
 # local
 from .standard_trainer import Trainer
-from .trainer_utilities import (send_to_device, save_model, repeat_dataloader, DataLoaderType)
-from ..optimizer import SchedulerType
+from .trainer_utilities import (send_to_device, repeat_dataloader, DataLoaderType)
 
 class TrainerUDA(Trainer):
 
@@ -105,7 +104,7 @@ class TrainerUDA(Trainer):
         final_loss = sup_loss + self.uda_coeff * unsup_loss
         
         # return total loss, sup result (.logits), sup labels
-        return final_loss, result.logits[:sup_size], b_labels
+        return final_loss, result.logits[:sup_size], b_labels, (sup_loss, unsup_loss)
     
     @classmethod
     def get_tsa_thresh(cls, schedule, global_step, num_train_steps, start, end):

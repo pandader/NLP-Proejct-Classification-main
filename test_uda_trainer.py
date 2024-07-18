@@ -11,7 +11,7 @@ from NlpAnalytics import *
 
 PATH = 'NlpAnalytics/data/dummy_data'
 GENERATOR = Generator().manual_seed(42)
-USE_LORA = False
+USE_LORA = True
 
 if __name__ == '__main__':
 
@@ -38,19 +38,20 @@ if __name__ == '__main__':
 
     ### Model & Optimization
     loader = BertClassifierLoader(ClassifierType.BERT_CLASSIFIER_HF, "bert-base-uncased", 2, 0.1, load_tokenizer=True)
-    loss_sup = get_loss_functions(LossFuncType.CROSS_ENTROPY)
-    loss_unsup = get_loss_functions(LossFuncType.KL_DIV)
-    loss_dict = {'sup':loss_sup, 'unsup':loss_unsup}
+    loss_dict = {
+        'sup': get_loss_functions(LossFuncType.CROSS_ENTROPY, reduce='none'), 
+        'unsup': get_loss_functions(LossFuncType.KL_DIV, reduce='none')
+    }
     if not USE_LORA:
-        optimizer = AdamNLP.newNLPAdam(loader.model, {'embeddings':True, 'encoder': 9}, lr = 2e-4)
+        optimizer = AdamNLP.newNLPAdam(loader.model, {'embeddings':True, 'encoder': 9}, lr=2e-4)
         model = optimizer.get_model_transformed()
     else:
-        lora_config = LoraConfig(task_type=TaskType.SEQ_CLS,target_modules=["query", "key", "value"], r=1, lora_alpha=1, lora_dropout=0.1)
+        lora_config = LoraConfig(task_type=TaskType.SEQ_CLS, target_modules=["query", "key", "value"], r=1, lora_alpha=1, lora_dropout=0.1)
         optimizer = AdamNLP.newNLPAdam_LORA(loader.model, lora_config)
         model = optimizer.get_model_transformed()
 
     ### Training
     trainer = TrainerUDA(model, datamodeler, loss_dict, optimizer)
-    trainer.train(2, schedule_type = SchedulerType.CONSTANT, save_model_freq=-1)
+    trainer.train(2, schedule_type=SchedulerType.CONSTANT, save_model_freq=1)
 
         

@@ -1,7 +1,7 @@
 # Copyright 2024 @ Lun Li
 #
-# Summary: A standard trainer/evaluator skeleton set up the pattern and demonstrate a handful utilities
-# Other trainers should subclass this one and add/override the member key member function "calcualte_loss"
+# Summary: A standard trainer/evaluator skeleton sets up the interface and demonstrates how it interacts with trainer utilities
+# Other customized trainers (including semi-supervsied ones) shall subclass this one while adding/overriding key member functions
 
 from tqdm import trange
 from typing import Optional, Any, Callable
@@ -16,6 +16,7 @@ from ..utilities import get_device
 from ..optimizer import SchedulerType
 
 class Evaluator:
+
     '''
     For both evaluation and testing
     '''
@@ -36,7 +37,7 @@ class Evaluator:
                 result = cur_model(b_input_ids, b_input_mask)
                 sup_loss = self.loss_func(result.logits, b_labels)
                 sup_loss = torch.mean(sup_loss)
-                resMgr.step(result.logits, b_labels, sup_loss)
+                resMgr.step(result.logits, b_labels, (sup_loss, None))
             resMgr.end_this_epoch(verbose=False)
         val_acc = resMgr.get_agg_res(1)['accuracy']
         print(f'Validation accuracy is: {val_acc.item()}.\n')
@@ -74,8 +75,8 @@ class Trainer:
               num_warmup_steps : Optional[int]=0,
               override_schedule : Optional[Any]=None,
               save_model_freq : Optional[int]=-1,
-              save_loc : Optional[str]="",
-              model_name : Optional[str]="this_model"):
+              save_loc : Optional[str]='',
+              model_name : Optional[str]='this_model'):
         
         # set up scheduler
         if schedule_type != SchedulerType.CONSTANT:
@@ -92,7 +93,7 @@ class Trainer:
                 # preprocess
                 self.preprocess()
                 # calculate loss
-                loss, sup_result, sup_labels = self.calcualte_loss(iter, batch)
+                loss, sup_result, sup_labels, loss_to_report = self.calcualte_loss(iter, batch)
                 # backward pass
                 loss.backward()
                 # postprocess
@@ -103,7 +104,7 @@ class Trainer:
                 if self.scheduler is not None:
                     self.scheduler.step()
                 # gather results and report if needed
-                self.resMgr.step(sup_result, sup_labels, loss)
+                self.resMgr.step(sup_result, sup_labels, loss_to_report)
                 self.resMgr.report(iter)
             # summary training results
             self.resMgr.end_this_epoch()
@@ -134,7 +135,7 @@ class Trainer:
         sup_loss = self.loss_func(result.logits, b_labels)
         sup_loss = torch.mean(sup_loss)
         # return total loss, sup result (.logits), sup labels
-        return sup_loss, result.logits, b_labels
+        return sup_loss, result.logits, b_labels, (sup_loss, None)
     
     def preprocess(self):
         # adds flexibility: inject preprocess before calculateLoss

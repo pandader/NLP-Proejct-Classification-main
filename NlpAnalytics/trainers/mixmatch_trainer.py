@@ -1,13 +1,14 @@
 # Copyright 2024 @ Lun Li
 #
-# Summary: A semi-supervised framework by following "MixMatch: A Holistic Approach to Semi-Supervised Learning"
-#          https://arxiv.org/pdf/1905.02249
+# Summary: inspired by,A semi-supervised framework by following "MixMatch: A Holistic Approach to Semi-Supervised Learning"
+# https://arxiv.org/pdf/1905.02249. We adapt the methodology for training large language model. The trick is, instead of mixing 
+# the inputs (averaging words doesn't really make sense), we mix the tokens from the last layer of BERT, i.e., the shared representation.
 
 import copy
 import numpy as np
 from torch.utils.data.dataloader import DataLoader
 from tqdm import trange
-from typing import Optional, Any, Callable, Tuple
+from typing import Optional, Any
 # torch
 import torch
 from torch import nn
@@ -21,7 +22,7 @@ from ..optimizer import SchedulerType
 from ..models import MultiLabelClassifier
 
 # Two important utilities to ensure good batch normalization
-# i.e., the proportionality of labeled vs unlabeled in every sub-group remains the same as in the sup-group
+# i.e., the proportionality of labeled vs unlabeled in every mixed group remains the same as in the sup-group
 def interleave_offsets(batch, nu):
     groups = [batch // (nu + 1)] * (nu + 1)
     for x in range(batch - sum(groups)):
@@ -42,10 +43,12 @@ def interleave(xy, batch):
 
 # Exponential moving average of model parameters
 class WeightEMA(object):
+
     def __init__(self, 
                  models : list[nn.Module],
                  ema_models : list[nn.Module],
                  alpha : float=0.999):
+
         self.models = models
         self.ema_models = ema_models
         self.alpha = alpha
@@ -85,7 +88,7 @@ class EvaluatorMixAndMatch(Evaluator):
                 logits = aux_models[0](result.hidden_states[0])
                 sup_loss = self.loss_func(logits, b_labels)
                 sup_loss = torch.mean(sup_loss)
-                resMgr.step(logits, b_labels, sup_loss)
+                resMgr.step(logits, b_labels, (sup_loss, None))
             resMgr.end_this_epoch(verbose=False)
         val_acc = resMgr.get_agg_res(1)['accuracy']
         print(f'Validation accuracy is: {val_acc.item()}.\n')
@@ -106,16 +109,14 @@ class TrainerMixAndMatch(Trainer):
                  lambda_u : Optional[float]=75,
                  ema_decay : Optional[float]=0.999):
 
-        super().__init__(
-            model, data_loader, get_loss_functions(LossFuncType.CROSS_ENTROPY), optimizer, report_freq
-        )
+        super().__init__(model, data_loader, get_loss_functions(LossFuncType.CROSS_ENTROPY), optimizer, report_freq)
         ### instaniate mixAndMatch specific parameters
         self.alpha = alpha
         self.temperature = temperature
         self.aux_models = [aux_model]
         self.aux_optimizer = aux_model_optimizer
         self.num_classes = self.aux_models[0].num_labels
-        self.loss_func_semi = get_loss_functions(loss_func_type=LossFuncType.PROB_MEAN_SQ, lambda_u = lambda_u)
+        self.loss_func_semi = get_loss_functions(loss_func_type=LossFuncType.PROB_MEAN_SQ, lambda_u=lambda_u)
         # since labeled data is << unlabeled data
         # the batches will be generated from these unlabeled ones
         # in the meanwhile, we repeated generate data fraom labeled ones
@@ -134,7 +135,7 @@ class TrainerMixAndMatch(Trainer):
         # set up evaluator
         self.eval = EvaluatorMixAndMatch(self.loss_func, self.data_loaders[DataLoaderType.VALIDATION])
         
-    # uda loss computation logic
+    # mixmatch loss computation logic
     def calcualte_loss(self, 
                        batch_idx : int,
                        batch : Any): # batch => training unlabeled
@@ -200,14 +201,13 @@ class TrainerMixAndMatch(Trainer):
         # loss calculation
         cur_epoch = self.resMgr.get_cur_epoch()
         num_epochs = self.resMgr.get_num_epochs()
-        l_x, l_u, w = self.loss_func_semi(
+        sup_loss, unsup_loss, w = self.loss_func_semi(
             logits_x, mixed_target[:batch_size], logits_u, mixed_target[batch_size:], 
-            cur_epoch + batch_idx / self.num_batches_per_epoch, num_epochs
-        )
-        loss = l_x + w * l_u
+            cur_epoch + batch_idx / self.num_batches_per_epoch, num_epochs)
+        loss = sup_loss + w * unsup_loss
 
         # return total loss, sup result (.logits), sup labels
-        return loss, output_r, b_labels
+        return loss, output_r, b_labels, (sup_loss, unsup_loss)
     
     def set_scheduler(self, 
                       num_epochs : int,
