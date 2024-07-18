@@ -29,7 +29,7 @@ Let us introduce below notations:
 | :--------   | :------- |
 | $$L \equiv (\mathcal{X}, \mathcal{Y})$$   | Labeled examples, i.e., a sample pair $(x, y)$ is drawn from $\mathcal{S}$, where $x\in\mathcal{X}$, and $y\in\mathcal{Y}$|
 | $$U \equiv \mathcal{X'}$$ | Unlabeled examples, i.e., a sample $x'$ is drawn from $\mathcal{X}'$ with potentially different distribution.    |
-| $$\mathcal{L}, \mathcal{L}_{\textit{sup}}, \mathcal{L}_{\textit{unsup}}$$ | Loss function, supervised/unsupervised loss functions.|
+| $$\mathcal{L}, \mathcal{L}_{sup}, \mathcal{L}_{unsup}$$ | Loss function, supervised/unsupervised loss functions.|
 | $p_1(y\|x)$ | Given an input $x$, the conditional class distribution predicted by model parameterized with $\theta$. |
 
 Supervised learning $\big(|U| = 0\big)$ often requires a large collection of labeled samples $L$ to train a NLP classifier. Unfortunately, in practice, labeled data are very limited, because human annotation is labrious, time consuming and costly. Additionally, there could be two other potential issues:
@@ -37,7 +37,7 @@ Supervised learning $\big(|U| = 0\big)$ often requires a large collection of lab
 * **Unexplored Data**: the amount of unlabeled data (live) is >>> labled data, but it is very under used.
 
 The *Semi-supervised learning* paradigm addresses exactly these issues. It takes advantage of unlabeled data to significantly reduce labeling cost. The trick is to define loss for unlabeled data. The ultimate loss function reads,
-$$ \mathcal{L} = \mathcal{L}_{\textit{sup}} + \lambda(t)\cdot\mathcal{L}_{\textit{unsup}}$$
+$$ \mathcal{L} = \mathcal{L}_{sup} + \lambda(t)\cdot\mathcal{L}_{unsup}$$
 where $\lambda(t)$ is a ramp function that gradually increases the importance of unlabeled samples. The prevalent approach to track unsupervised loss are consistency regularization and psuedo labeling. In this project, we offer two algorithms based of the above framework: 1) UDA; 2) MixMatch.
 
 ### 3.2 Consistency Training -- UDA/UDG
