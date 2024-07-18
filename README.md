@@ -37,7 +37,7 @@ Supervised learning $\big(|U| = 0\big)$ often requires a large collection of lab
 * **Unexplored Data**: the amount of unlabeled data (live) is >>> labled data, but it is very under used.
 
 The *Semi-supervised learning* paradigm addresses exactly these issues. It takes advantage of unlabeled data to significantly reduce labeling cost. The trick is to define loss for unlabeled data. The ultimate loss function reads,
-$$ \mathcal{L} = \mathcal{L}\_{sup} + \lambda(t)\cdot\mathcal{L}\_{unsup}$$
+$$L = L_{sup} + \lambda(t)\cdot L_{unsup}$$
 where $\lambda(t)$ is a ramp function that gradually increases the importance of unlabeled samples. The prevalent approach to track unsupervised loss are consistency regularization and psuedo labeling. In this project, we offer two algorithms based of the above framework: 1) UDA; 2) MixMatch.
 
 ### 3.2 Consistency Training -- UDA/UDG
@@ -55,9 +55,9 @@ It is worth pointing out, the author proposes couple of techniques to enhance th
 ### 3.3 MixMatch ###
 
 Before delving into MixMatch, let's first brief another important technique when dealing with unlabeled data -- *Pseudo Labeling*. It first predicts the labels of unlabeled data and then trains the model on both labeled and unlabeled data simultaneously. The optimization is an iterative process described as below,
-- **Step 0**: set $\hat{L} = L$.
-- **Step 1**: builds a classifier from currently labeled data $\hat{L}$.
-- **Step 2**: use classifier from **Step 1** to predict labels for the unlabeled data $U$ and converts the most confident ones into labeled samples, i.e., $\hat{L} = \hat{L} \cup (\tilde{U},\,\texttt{Labeler}(\tilde{U}))$, where $\tilde{U}\subset U$.
+- **Step 0**: set $\widehat{L} = L$.
+- **Step 1**: builds a classifier from currently labeled data $\widehat{L}$.
+- **Step 2**: use classifier from **Step 1** to predict labels for the unlabeled data $U$ and converts the most confident ones into labeled samples, i.e., $\widehat{L} = \widehat{L} \cup (\widetilde{U}, \texttt{Labeler}(\widetilde{U}))$, where $\widetilde{U}\subset U$.
 
 [MixMatch][3]</cite> (Berthelot et al. 2019) combines both *consistency training* and *pseudo labeling*. There are $3$ components of the algorithm,
 - **MixUp**: regularizes the model to favor simple linear behavior in-between training examples.
