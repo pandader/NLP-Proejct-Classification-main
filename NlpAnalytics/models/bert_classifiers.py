@@ -14,6 +14,8 @@ from torch import nn
 # huggingface
 from transformers.modeling_outputs import SequenceClassifierOutput
 from transformers import (BertPreTrainedModel, BertConfig, BertTokenizerFast, BertModel, BertForSequenceClassification)
+# utilities
+from ..utilities import get_device
 
 ### BASE BERT MODEL
 ### load model and corresponding tokenizer from huggingface
@@ -64,6 +66,7 @@ class MultiLabelClassifier(nn.Module):
                 # not apply activation for the last layer
                 break
             self.sequential.add_module(f'activation_{i}', nn.ReLU())
+        self.sequential.to(get_device())
     
     @property
     def num_labels(self):

@@ -83,7 +83,7 @@ Data augmentation is a critical step for semi-supervised algorithm. In this proj
 
 ## Get Started
 
-We provide handy classes and APIs for both analysis-oriented users and developers. There are $4$ jupyternote books to demonstrate data manipulation, data generation, optimization set-up, and transformer based classifiers. In addition, there are $3$ .py files to showcase the end-to-end workflow of supervised/unsupervised classification.
+We provide handy classes and APIs for both analysis-oriented users and developers. There are $4$ jupyternote books to demonstrate data manipulation, data generation, optimization set-up, and transformer based classifiers. In addition, there are $3$ .py files (as well as .ipynb version) to showcase the end-to-end workflow of supervised/unsupervised classification.
 
 
 ## Reference

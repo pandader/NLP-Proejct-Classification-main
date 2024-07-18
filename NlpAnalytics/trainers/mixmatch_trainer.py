@@ -149,7 +149,7 @@ class TrainerMixAndMatch(Trainer):
         batch_size = b_input_ids.size(0)
         # transform label to one hot
         b_labels_one_hot = torch.zeros(
-            batch_size, self.num_classes).scatter_(1, b_labels.view(-1, 1).long(), 1).to(self.device)
+            batch_size, self.num_classes).scatter_(1, b_labels.view(-1, 1).cpu().long(), 1).to(self.device)
 
         ### forward pass but no grad
         with torch.no_grad():

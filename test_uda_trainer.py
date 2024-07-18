@@ -11,7 +11,7 @@ from NlpAnalytics import *
 
 PATH = 'NlpAnalytics/data/dummy_data'
 GENERATOR = Generator().manual_seed(42)
-USE_LORA = True
+USE_LORA = False
 
 if __name__ == '__main__':
 
