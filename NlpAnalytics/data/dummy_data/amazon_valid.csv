@@ -1,0 +1,2034 @@
+id,label,text,label_text
+11,40,turn the lights off please,iot_hue_lightoff
+17,31,dim the lights in the hall,iot_hue_lightdim
+24,31,make a room darker,iot_hue_lightdim
+26,34,clean the flat,iot_cleaning
+30,34,cleaning is good dust is so bad do now your magic clean my carpet,iot_cleaning
+42,12,give me the status on my available memory,general_quirky
+53,3,list most rated delivery options for chinese food,takeaway_query
+58,3,find my thai takeaways around grassmarket,takeaway_query
+67,45,i'd like to hear queen's barcelona,play_music
+68,45,play me barcelona by queen,play_music
+74,57,what's the band is playing now,music_query
+90,3,what's with my dinner order,takeaway_query
+99,13,what's the weeks forecast,weather_query
+107,45,play hurts like heaven,play_music
+109,45,put on cannibal queen,play_music
+112,45,play some david bowie,play_music
+113,28,loop this track,music_settings
+115,35,set the volume to low,audio_volume_down
+127,0,what's the day today,datetime_query
+138,57,which song is that,music_query
+147,45,i like to listen to jazz,play_music
+148,45,olly i like to listen to jazz,play_music
+167,5,hey hey,general_greet
+173,48,set alarm tomorrow at six am,alarm_set
+188,14,volume up,audio_volume_up
+217,13,is it raining outside,weather_query
+229,0,what time is it in las vegas,datetime_query
+230,0,what time is it in beijing,datetime_query
+232,48,set an alarm at six in the morning,alarm_set
+237,23,did i set an alarm to wake up in the morning,alarm_query
+242,22,what's happening in america,news_query
+251,45,olly death metal now,play_music
+271,0,what's the time in tokyo now,datetime_query
+295,22,tell me today's newspaper's headlines,news_query
+298,45,play chopin,play_music
+311,0,what day is memorial day this year,datetime_query
+312,41,it's too dark here,iot_hue_lighton
+318,13,is it going to rain tomorrow,weather_query
+331,35,softer,audio_volume_down
+345,13,what will be the temperature out there tomorrow,weather_query
+346,13,what is tomorrows weather predictions,weather_query
+353,0,what day of the week is the twenty second march,datetime_query
+365,0,is it monday today,datetime_query
+368,13,what's the weather like in new york city,weather_query
+375,13,is it sunny in gonbad now,weather_query
+387,22,let me know as soon as there is more news on brexit,news_query
+388,8,turn off the smart plug,iot_wemo_off
+392,45,play a song from my favorites,play_music
+406,45,i would like to listen to pop music please,play_music
+415,1,change my room lights so that i can get a good sleep,iot_hue_lightchange
+431,13,what's the weather like on friday,weather_query
+434,0,what day is it today,datetime_query
+439,13,should i wear a jacket today,weather_query
+444,28,disable shuffle,music_settings
+465,0,what's the date,datetime_query
+476,12,what things can't you do,general_quirky
+480,0,tell me the hour,datetime_query
+490,13,is it hot outside,weather_query
+510,23,do i have an alarm set,alarm_query
+511,13,by proper formula,weather_query
+516,46,mute for the next hour please,audio_volume_mute
+517,45,play my favorite song,play_music
+523,13,its very dangerous one,weather_query
+532,22,please tell me some international news,news_query
+534,48,set a wake up call for ten am,alarm_set
+536,48,make an alarm for three p. m.,alarm_set
+538,48,set an alarm for one p. m.,alarm_set
+541,45,play the song immediately,play_music
+552,57,email me the lyrics to this song,music_query
+562,52,get rid of my eight am alarm,alarm_remove
+582,13,will it be raining tomorrow,weather_query
+595,45,please i want to hear we will rock you from queen,play_music
+601,48,start alarm,alarm_set
+610,48,i want to wake up at six am tomorrow please,alarm_set
+616,45,olly play songs from my playlist,play_music
+617,0,what day of the week is thanksgiving,datetime_query
+626,45,please let me hear six hundred and sixty six the number of the beast,play_music
+638,25,can you find an animal joke for me,general_joke
+657,13,what is status of current weather,weather_query
+658,0,what is time now in california,datetime_query
+676,38,set time zone,datetime_convert
+678,24,turn on the t. v. socket when i arrive home,iot_wemo_on
+682,22,follow news about hilary email issue in future,news_query
+689,35,lower the volume,audio_volume_down
+691,14,i can't hear just increase the volume,audio_volume_up
+697,18,can you bright the lights please,iot_hue_lightup
+707,45,i want to hear chopin now,play_music
+708,22,who is leading the formula one race right now,news_query
+710,56,prepare coffee,iot_coffee
+711,22,read the headlines from new york times,news_query
+718,22,can i know the breaking news from c. n. n.,news_query
+737,35,could you please lower the tone,audio_volume_down
+741,45,play songs from the r. & b. and soul genre,play_music
+756,8,can you turn off wemo plug socket,iot_wemo_off
+762,13,what does the weather look like this week,weather_query
+763,13,what is the weather supposed to be like this week,weather_query
+776,22,tell me if an earthquake happens in the world,news_query
+778,45,play boogie in your butt by eddie murphy,play_music
+803,46,hey olly mute the speakers,audio_volume_mute
+806,35,lower all volume on speakers please,audio_volume_down
+807,56,make coffee now,iot_coffee
+817,45,ok google play some music,play_music
+835,22,what is the latest gossip of hollywood going on,news_query
+851,18,brighten lights,iot_hue_lightup
+885,48,alarm set eight am,alarm_set
+895,52,turn off the six am alarm for wednesday,alarm_remove
+896,52,turn off any morning alarms after friday,alarm_remove
+906,13,look up next week weather for me please,weather_query
+921,45,play music from my favorite artist,play_music
+925,31,please lower the lights a little bit,iot_hue_lightdim
+937,52,phones,alarm_remove
+943,38,if it's eight p. m. on the east coast what time is it in sacramento california,datetime_convert
+966,3,does pf changs accept take-out orders,takeaway_query
+975,0,can you tell me what time is it in new york,datetime_query
+984,22,current news c. n. n.,news_query
+1012,47,take me to the huffington post website,social_post
+1015,22,pull up the headlines please,news_query
+1016,22,what are the headlines from the new york times,news_query
+1023,3,find out if the olive garden will let me do takeaway,takeaway_query
+1027,0,can i have today's date,datetime_query
+1038,23,is my school alarm set,alarm_query
+1051,13,how hot is it outside,weather_query
+1058,34,at one p. m. today start the robot vacuum cleaner,iot_cleaning
+1085,22,good assistants,news_query
+1094,22,send me current news for the day,news_query
+1122,45,play lady by kenny rogers now,play_music
+1125,0,today date,datetime_query
+1177,57,what are the lyrics to the song i will always love you by dolly parton,music_query
+1179,7,never ever play me any country,music_dislikeness
+1189,38,if it's ten p. m. in california what time is it in alabama,datetime_convert
+1192,45,i need to hear notorious thugs by bone thugs now,play_music
+1196,13,what is the weather condition today,weather_query
+1197,13,will it rain,weather_query
+1201,0,what is the current time in new york,datetime_query
+1209,9,can you suggest me a healthy foods for dinner,cooking_recipe
+1210,16,order a meal from a nice restaurant,takeaway_order
+1211,38,convert new york time to london,datetime_convert
+1215,1,olly make the living room blue,iot_hue_lightchange
+1216,1,make the living room blue,iot_hue_lightchange
+1222,45,please play leviathan,play_music
+1223,13,what is the weather update for tuesday,weather_query
+1224,13,what will be the weather update for monday noon,weather_query
+1225,0,what will be day on fifteenth march,datetime_query
+1227,0,i want the date of last monday of this month,datetime_query
+1234,38,what is the time in india when the time in us is twelve p. m.,datetime_convert
+1241,0,tell me what time it is,datetime_query
+1257,25,find me the best knock knock joke on the internet,general_joke
+1259,13,what will be the weather on monday this week,weather_query
+1268,9,your recipe of steak was superb,cooking_recipe
+1271,22,what's happening in the world today,news_query
+1272,0,what day is it on fifth december,datetime_query
+1277,5,hey,general_greet
+1295,22,i want the news about academy awards,news_query
+1312,0,tell me the current time in ottawa,datetime_query
+1327,13,what is weather today,weather_query
+1333,13,it is hot today is not it,weather_query
+1334,13,it is very hot today is not it,weather_query
+1346,0,one hundred thousand two hundred and seventeenth,datetime_query
+1349,13,what will the weather be like this week,weather_query
+1357,1,switch to night light setting,iot_hue_lightchange
+1365,14,just increase the volume a little,audio_volume_up
+1380,3,can i get an order delivered from romero's,takeaway_query
+1416,16,order some takeaway food,takeaway_order
+1430,45,find and queue all songs of kate perry and play all without shuffling,play_music
+1446,45,make a playlist of all songs of eminem and play with shuffle,play_music
+1466,13,is it going to snow this week,weather_query
+1468,45,music on,play_music
+1478,25,search for new jokes,general_joke
+1525,45,i want to listen to soft rock,play_music
+1544,45,i want to listen to up beat music,play_music
+1545,45,play the billboard top ten,play_music
+1548,13,can i have the ten day forecast for me area,weather_query
+1557,13,get the weather forecast for this week please,weather_query
+1558,45,play me something pop,play_music
+1566,45,play music from the playlist,play_music
+1569,56,can i have an espresso please,iot_coffee
+1576,34,olly start the vacuum cleaner,iot_cleaning
+1599,34,can you start the roomba,iot_cleaning
+1615,22,send me alert on any new topic on politics,news_query
+1621,43,rating,music_likeness
+1625,23,am or p. m.,alarm_query
+1637,22,what are the latest articles from yahoo news,news_query
+1664,22,find me any news from so clean the last six hours,news_query
+1678,57,nine hundred and ninety nine f. m. is currently playing what music,music_query
+1680,14,increase the volume of the music to ninety,audio_volume_up
+1687,13,is it a yes or a no that tomorrow's temperature will be hot,weather_query
+1688,13,what is this week's weather forecast,weather_query
+1696,57,who is the artist of the song playing now,music_query
+1698,7,i don't like that song turn it off,music_dislikeness
+1702,34,by ten to eleven am daily start my vacuum cleaner,iot_cleaning
+1726,13,what will be the highest temperature in coming week,weather_query
+1732,23,checkout today set alarm of ten am,alarm_query
+1770,45,play enrique,play_music
+1771,45,play michael jackson,play_music
+1791,57,is it possible for you to provide the likes of my music,music_query
+1793,22,what is the latest news from syria,news_query
+1805,18,i need some more lights,iot_hue_lightup
+1818,0,tell me current time,datetime_query
+1823,43,my favorite singer is shakira,music_likeness
+1827,22,what's going on in new york,news_query
+1834,45,play my most listened songs,play_music
+1839,45,go to youtube and play me the best wedding songs collection,play_music
+1858,22,bring me the latest tech news,news_query
+1871,43,add that song to my top ten favorites list,music_likeness
+1877,43,that song was awesome can you repeat,music_likeness
+1888,31,give me low lighting in the kitchen,iot_hue_lightdim
+1894,43,save that song and my opinion,music_likeness
+1901,22,update me with the election results,news_query
+1902,22,what does the analysts say about the new immigration policies,news_query
+1910,3,restaurant order status,takeaway_query
+1914,48,alert me at five hours,alarm_set
+1925,34,start my robot vacuum cleaner,iot_cleaning
+1928,45,play music,play_music
+1934,0,what is the current date time group,datetime_query
+1943,34,start house cleanup,iot_cleaning
+1945,40,switch off the light,iot_hue_lightoff
+1948,25,funny joke,general_joke
+1953,57,what song is currently playing,music_query
+1971,43,save the information which is provided by aman on this song,music_likeness
+1988,41,hey alexa turn on disco lights in my apartment and let the party begin,iot_hue_lighton
+2003,46,please shut off,audio_volume_mute
+2006,45,please play rap,play_music
+2009,13,what will be this week weather condition,weather_query
+2040,13,what a sunny day,weather_query
+2042,32,is the meeting scheduled for tomorrow,calendar_query
+2058,13,it is cloudy today,weather_query
+2069,46,touch the mute button,audio_volume_mute
+2073,45,play me a recent cover of cherry bomb,play_music
+2088,45,let's hear some country and western not from the us,play_music
+2092,57,check the current playing music title,music_query
+2095,3,does peking garden deliver,takeaway_query
+2103,45,play my last used playlist,play_music
+2112,0,give me the time in london,datetime_query
+2115,45,play pop,play_music
+2118,1,set the mood please,iot_hue_lightchange
+2120,1,turn lights blue,iot_hue_lightchange
+2122,1,turn living room lights red,iot_hue_lightchange
+2125,13,tell me the weather for new brighton pa olly,weather_query
+2140,13,siri how is the weather outside,weather_query
+2144,0,what day was it on my birth date,datetime_query
+2149,57,what is the title of the song that is playing,music_query
+2154,0,could you tell me what time it is,datetime_query
+2157,13,weather on monday,weather_query
+2158,13,weather on tuesday,weather_query
+2161,28,repeat song,music_settings
+2179,13,can you please tell me the current weather condition,weather_query
+2187,40,can you please turn off the light of my bed room,iot_hue_lightoff
+2196,25,hey share me some joke to make me happy,general_joke
+2200,0,how many weeks are left for christmas,datetime_query
+2211,22,do you have any news from news provides,news_query
+2221,13,weather in homestead,weather_query
+2227,38,please convert nine am c. s. t. to e. s. t. time,datetime_convert
+2246,40,turn off the closet light,iot_hue_lightoff
+2259,45,play a r. rahman music,play_music
+2272,45,play my top rated pop songs please,play_music
+2282,1,set color blue for all lights of my house,iot_hue_lightchange
+2303,43,i am forever hip hop,music_likeness
+2312,31,olly turn the lights down to seven,iot_hue_lightdim
+2313,31,lights down to seven,iot_hue_lightdim
+2318,31,minimize the light power,iot_hue_lightdim
+2321,13,what will the weather be on the seventh,weather_query
+2323,46,mute the speaker please,audio_volume_mute
+2353,57,what is the name of the music playing now,music_query
+2360,14,turn the volume up,audio_volume_up
+2364,57,what song is this,music_query
+2392,45,i want to hear love me,play_music
+2417,28,shuffle the current album of songs,music_settings
+2419,22,what news updates are there from news express,news_query
+2420,22,what's new in news express,news_query
+2421,22,what's happening in news express,news_query
+2425,0,tell me what time is it,datetime_query
+2428,0,let me know the time in india,datetime_query
+2431,23,what alarms are upcoming,alarm_query
+2464,40,olly turn off the lights,iot_hue_lightoff
+2467,22,is there a way to get the latest breaking news on trump,news_query
+2470,41,switch on the lights,iot_hue_lighton
+2478,16,order take-out,takeaway_order
+2483,31,will you dim all the lights,iot_hue_lightdim
+2495,22,give me the news,news_query
+2499,31,lights down,iot_hue_lightdim
+2514,13,what is the weather of this week,weather_query
+2515,13,tell me the weather for this week,weather_query
+2518,34,hey olly how do i start the robot vacuum cleaner,iot_cleaning
+2520,34,please help me turn on the robot vacuum cleaner,iot_cleaning
+2526,45,i want to hear some modern rock,play_music
+2538,3,what is the status on my latest order,takeaway_query
+2544,13,what is it like outside,weather_query
+2553,0,what day of the week is valentine's on,datetime_query
+2558,13,tell me the weather in miami florida,weather_query
+2562,45,i want some music how about playing my workout playlist,play_music
+2563,48,set an alarm for tomorrow morning at eight,alarm_set
+2576,31,please dim the lights in the bedroom,iot_hue_lightdim
+2582,57,tell me the artist name,music_query
+2583,57,what is the song name,music_query
+2590,22,what's happening in world news today,news_query
+2598,22,what is the latest international news,news_query
+2599,56,i would like coffee now,iot_coffee
+2600,40,turn off my bedside lamp please,iot_hue_lightoff
+2620,34,please start vacuum,iot_cleaning
+2621,34,start vacuum cleaner now,iot_cleaning
+2622,46,mute all responses now,audio_volume_mute
+2623,46,no speaking please,audio_volume_mute
+2625,22,did we get any update from the new provider,news_query
+2641,22,what is new about blank,news_query
+2643,45,play adele,play_music
+2649,13,what is the weather forecast for seattle,weather_query
+2654,13,will it snow next week,weather_query
+2665,22,what is the seattle city council doing about homelessness,news_query
+2668,22,get news from b. b. c. news,news_query
+2672,23,how many alarms do i have set for morning hours between six and nine am,alarm_query
+2675,45,open playlist,play_music
+2687,16,confirm the order,takeaway_order
+2693,56,make a cup of coffee for me,iot_coffee
+2699,45,i want to listen to rock,play_music
+2701,45,ok google play rock music,play_music
+2710,40,power off the current,iot_hue_lightoff
+2720,48,set an alarm for five thirty,alarm_set
+2740,3,can i get delivery from this restaurant,takeaway_query
+2741,3,does my favorite restaurant do delivery,takeaway_query
+2742,3,do they offer takeaway,takeaway_query
+2749,56,start up the coffee machine,iot_coffee
+2757,22,what's the news in politics,news_query
+2763,0,show me the time,datetime_query
+2769,45,play music from the jazz genre,play_music
+2783,0,what is the date of next saturday,datetime_query
+2790,22,did the yankees win last night,news_query
+2797,46,mute sound from speakers,audio_volume_mute
+2810,18,brighten lights in living room,iot_hue_lightup
+2814,56,brew some coffee,iot_coffee
+2821,1,change light colors from blue to white,iot_hue_lightchange
+2822,1,make the lights in the house red,iot_hue_lightchange
+2825,0,what day does april sixteenth fall on,datetime_query
+2834,34,please have vacuum go for one hour,iot_cleaning
+2835,0,tell me the date today,datetime_query
+2841,1,set the living room lights to red,iot_hue_lightchange
+2844,3,how's the restaurant's delivery going,takeaway_query
+2846,57,listen to this song,music_query
+2851,3,domino's has takeaway right,takeaway_query
+2863,1,change light color to blue,iot_hue_lightchange
+2869,23,tell me my alarms,alarm_query
+2879,52,please remove any alarms that i have set,alarm_remove
+2886,22,please pull up the article on dog sitting in the morning news,news_query
+2889,13,what is the weather here,weather_query
+2901,16,order general t'so eggroll to go,takeaway_order
+2919,22,are there any new videos on the youtube for new york times,news_query
+2932,45,next play atmosphere,play_music
+2935,45,play my country playlist,play_music
+2936,45,play my second playlist,play_music
+2943,0,what's today's date,datetime_query
+2946,8,alexa turn off the fan in the master bedroom,iot_wemo_off
+2949,43,alexa please save the current song to favorites,music_likeness
+2955,43,i love hip hop,music_likeness
+2963,45,please play my favorite song by bruno mars,play_music
+2971,56,please start the coffee,iot_coffee
+2978,31,lower lights,iot_hue_lightdim
+2979,31,nighttime mode,iot_hue_lightdim
+2991,22,trending tech news,news_query
+2992,22,recent tech headlines,news_query
+2993,45,play next song,play_music
+3004,57,what year was the song created,music_query
+3018,3,find my food,takeaway_query
+3028,13,olly accumulation of snow predictions in buffalo,weather_query
+3041,22,olly trending hot news topics,news_query
+3045,23,next alarm,alarm_query
+3046,16,i am really craving for chinese food right now please let me order take out,takeaway_order
+3056,22,what is new in politics today can you filter out trump news though,news_query
+3082,16,i need two pizzas stat,takeaway_order
+3088,45,turn on a song,play_music
+3094,40,turn off lighting,iot_hue_lightoff
+3121,13,is it sunny what south the temperature,weather_query
+3123,45,play me some music,play_music
+3134,16,what places can i order take-out from near by,takeaway_order
+3139,35,lower your volume please,audio_volume_down
+3148,23,what time is my wake up alarm set for,alarm_query
+3149,23,do i have any alarms for tomorrow morning,alarm_query
+3151,52,remove my early alarms,alarm_remove
+3160,45,play classical chamber music playlist,play_music
+3166,45,make that song play next up,play_music
+3177,57,what is the name of the lead singer in this band,music_query
+3183,8,power off on,iot_wemo_off
+3194,45,siri play my pop playlist,play_music
+3200,22,tell me if there's any new news on that topic,news_query
+3202,43,i like jazz you should know,music_likeness
+3203,43,please check my playlist,music_likeness
+3242,48,can you set the alarm for one hundred and thirty,alarm_set
+3248,52,cancel alarm for tomorrow,alarm_remove
+3261,0,what is the current central time,datetime_query
+3270,52,remove alarms set for tomorrow,alarm_remove
+3281,31,olly lower the lights please,iot_hue_lightdim
+3285,13,will it rain tomorrow in miami,weather_query
+3287,0,what time is it in dooa,datetime_query
+3293,38,what is the time difference between eastern and pacific,datetime_convert
+3296,3,does the nearby chinese restaurant do delivery,takeaway_query
+3309,13,what is the weather in los angeles,weather_query
+3340,13,ok google what's the weather like,weather_query
+3377,31,decrease lighting,iot_hue_lightdim
+3394,24,please turn on my wemo plug socket,iot_wemo_on
+3402,13,what will the weather be next week,weather_query
+3404,57,how to repeat the song,music_query
+3421,57,what music is it,music_query
+3437,18,increase lights please,iot_hue_lightup
+3439,45,play romantic playlist,play_music
+3443,0,what day of the week does the twenty second fall on this month,datetime_query
+3454,46,go to sleep,audio_volume_mute
+3463,48,i would like a wake up alarm at seven am tomorrow,alarm_set
+3464,41,please turn on all the outdoor lights,iot_hue_lighton
+3466,14,increase volume please,audio_volume_up
+3471,22,get current news on government shutdown,news_query
+3496,45,play music by the beatles,play_music
+3511,12,night time,general_quirky
+3528,16,get me takeaway food,takeaway_order
+3530,45,play something romantic,play_music
+3547,13,will it be nice at the beach on friday,weather_query
+3551,45,play afi's fourth album,play_music
+3563,56,please make me a coffee,iot_coffee
+3588,13,which day will be rainy in this week,weather_query
+3589,13,how is the weather in this week,weather_query
+3599,48,set up an alarm clock at one p. m.,alarm_set
+3602,22,what's the latest news about us election,news_query
+3609,56,please make a coffee for me,iot_coffee
+3613,13,is today a sunny day,weather_query
+3620,13,what is the weather in sydney now,weather_query
+3632,45,i want to listen to my playlist will you play it now,play_music
+3637,45,olly put on be warned by tech nine,play_music
+3649,13,how hot is it in miami,weather_query
+3651,0,what's the current time in orlando floor,datetime_query
+3652,0,what's the current time in orlando floor,datetime_query
+3665,13,will it be too cold for a dress on sunday,weather_query
+3676,45,can i hear some britney spears,play_music
+3701,31,this is too bright,iot_hue_lightdim
+3704,16,order two large pizzas and pieces of hot wings from dominoes,takeaway_order
+3705,0,what is the date and time for today,datetime_query
+3712,45,play my current playlist from top,play_music
+3713,45,play my most favorite country song,play_music
+3720,0,what is the time in zimbabwe right now,datetime_query
+3721,0,olly what is the time in zimbabwe right now,datetime_query
+3724,45,please play aretha franklin's call me next,play_music
+3744,0,let me know the time,datetime_query
+3754,22,what is the latest news on sprint,news_query
+3758,45,after this play me rebel yell,play_music
+3768,45,i want to hear some jazz,play_music
+3801,13,show me one week weather of mumbai,weather_query
+3803,8,please turn off the smart plug socket,iot_wemo_off
+3804,24,turn on the wemo plug socket,iot_wemo_on
+3811,35,slow the volume speaker,audio_volume_down
+3840,34,turn on the roomba,iot_cleaning
+3843,16,order me chinese food,takeaway_order
+3863,57,what person produced the song that is on the radio,music_query
+3865,22,what are the scores for the two ucl games going on right now,news_query
+3868,22,what is the headline from chicago tribune,news_query
+3875,13,what is the weather looking like for the rest of the week,weather_query
+3876,13,is there going to be any flip flop weather soon,weather_query
+3880,13,what is the weather like now,weather_query
+3895,18,please increase the light,iot_hue_lightup
+3898,13,will there be any snow next week,weather_query
+3904,52,please delete the wednesday evening alarm,alarm_remove
+3926,13,how much snow has maine received as of today,weather_query
+3940,43,save this songs genre for me,music_likeness
+3941,43,i'd like you to remember that i like this song,music_likeness
+3954,45,after this song play thriller,play_music
+3956,48,alert me in three hours,alarm_set
+3968,45,indie,play_music
+3970,13,what's the weather right now,weather_query
+3972,22,tell me what's happening in european politics,news_query
+3973,22,i want to know who is at the top of the english premier league at the moment,news_query
+3997,22,alexa what is the news in my area,news_query
+4003,45,time to hear me some blake shelton,play_music
+4008,28,turn on repeat,music_settings
+4012,34,get the cleaning on,iot_cleaning
+4033,0,what's the best day next week to go out for pizza,datetime_query
+4046,13,what type of weather can i expect today,weather_query
+4065,0,what is the time in new york,datetime_query
+4094,48,please put on an alarm for eight am,alarm_set
+4114,45,add a lot of james taylor joni mitchell and cat stevens to the playlist,play_music
+4117,45,can you play me some dance music,play_music
+4127,45,play songs from playlist,play_music
+4129,23,what alarms do i have set right now,alarm_query
+4131,13,what will be the temperature today for miami florida,weather_query
+4134,45,load spotify,play_music
+4156,25,hey olly tell me a joke,general_joke
+4161,16,i want to order some chinese food tonight what's delivering to me,takeaway_order
+4175,1,hey siri chance the current light settings,iot_hue_lightchange
+4191,57,i've heard this riff before what song stole this riff it's exactly the same,music_query
+4198,52,remove the alarm set for four hundred am,alarm_remove
+4228,13,will it be over ninety degrees tomorrow,weather_query
+4233,45,play my favorite song of last year,play_music
+4243,46,please do not respond,audio_volume_mute
+4277,40,can you turn off my desk lamp,iot_hue_lightoff
+4278,40,desk lamp one off,iot_hue_lightoff
+4287,18,light up,iot_hue_lightup
+4291,13,am i going to need to bring an umbrella to work today,weather_query
+4292,13,can i wear shorts out while shopping today,weather_query
+4301,45,play music by queen,play_music
+4302,45,play the newest album by jay z.,play_music
+4317,48,set an alarm for ten o'clock tomorrow morning,alarm_set
+4318,48,wake me up at ten,alarm_set
+4326,45,play dynamite by a. c. d. c.,play_music
+4338,16,show me delivery near me,takeaway_order
+4339,16,open the internet,takeaway_order
+4359,45,let me hear some music,play_music
+4360,45,i want to hear great music,play_music
+4387,18,raise the lamp's light,iot_hue_lightup
+4398,14,please turn the volume to the loudest setting,audio_volume_up
+4421,46,mute the audio,audio_volume_mute
+4422,46,stop the audio,audio_volume_mute
+4424,13,will it rain at all this week,weather_query
+4440,31,dim all interior lights,iot_hue_lightdim
+4481,13,will i be able to get away with shorts today,weather_query
+4483,13,should i dress in layers today,weather_query
+4494,1,turn my lights to some random color,iot_hue_lightchange
+4495,22,give me the newest new york times,news_query
+4497,46,mute the settings,audio_volume_mute
+4501,13,is it supposed to snow this week,weather_query
+4515,1,change the color of the lights,iot_hue_lightchange
+4519,0,day on twenty second april,datetime_query
+4532,13,how soon can we expect rain,weather_query
+4538,13,the weather predictions you gave me are for the wrong city i want to know the temperature where i am at,weather_query
+4545,16,order a double bacon cheeseburger with bacon an white american cheese,takeaway_order
+4546,45,play from smashing pumpkins,play_music
+4551,22,update on april the giraffe,news_query
+4558,13,what is the weather near me this week,weather_query
+4573,18,turn up the lights in here please,iot_hue_lightup
+4579,14,please turn up the speaker volume,audio_volume_up
+4582,0,is the time different in moscow,datetime_query
+4600,3,tell me which catering packages are available,takeaway_query
+4603,13,will the sky be overcast,weather_query
+4604,3,check to see if pizza hut has my order on the way,takeaway_query
+4619,24,start new smart socket,iot_wemo_on
+4622,31,dim the lights to level two,iot_hue_lightdim
+4623,13,what is this week's weather forecast,weather_query
+4632,40,please turn bedroom lights off,iot_hue_lightoff
+4645,3,when is taco bell going to arrive,takeaway_query
+4664,57,what is the name of this musical group,music_query
+4674,22,when is trumps next press conference,news_query
+4675,4,what are the current stock prices for google,qa_stock
+4681,13,is my golf game going to get rained out,weather_query
+4687,13,what's the weather in chicago,weather_query
+4693,48,set an alarm for five am,alarm_set
+4694,48,please set an alarm for ten p. m.,alarm_set
+4696,13,what is the weather like tomorrow,weather_query
+4697,13,is it going to be nice tomorrow,weather_query
+4705,13,what is the forecast in me area today,weather_query
+4723,23,list my different alarm,alarm_query
+4728,4,turn on notification for all news on the stock market,qa_stock
+4729,4,notify me of the latest news on the stock market,qa_stock
+4730,45,open my music,play_music
+4741,22,tell me what the latest news is,news_query
+4745,25,i want a nerd joke,general_joke
+4752,13,should i wear shorts today,weather_query
+4775,25,can you tell me a nice joke,general_joke
+4778,28,repeat the last song again,music_settings
+4779,0,what day of the week is june twenty seventh on this year,datetime_query
+4786,13,will i need to be warm,weather_query
+4791,0,what is it today,datetime_query
+4796,40,shut off the lights in the bedroom,iot_hue_lightoff
+4810,38,convert time zone,datetime_convert
+4814,0,what time is it in another city,datetime_query
+4822,49,when is sunset,qa_factoid
+4823,13,ten day forecast,weather_query
+4827,1,can the lights be changed to green,iot_hue_lightchange
+4835,22,show me new york times news,news_query
+4836,22,is there any news,news_query
+4840,45,play uptown girl by billy joel,play_music
+4850,48,set an alarm for five minutes from now,alarm_set
+4853,48,please set my alarm,alarm_set
+4867,16,call pf chang's to order me egg foo young,takeaway_order
+4872,13,what is the current temperature,weather_query
+4892,45,tune in some music,play_music
+4899,57,do you know about this lyrics,music_query
+4900,57,who sung this,music_query
+4908,25,open some cools jokes,general_joke
+4911,25,tell me joke,general_joke
+4939,40,switch the lights to off,iot_hue_lightoff
+4941,22,give me updates on the hurricane news,news_query
+4942,4,send me the stock market updates for today,qa_stock
+4967,22,what were the winning powerball numbers last night,news_query
+4971,52,remove finlee's bedtime alarm,alarm_remove
+4979,35,please speak quieter to me,audio_volume_down
+5004,0,what is the time for the eastern time zone,datetime_query
+5015,22,please tell me the latest news about the election scenario in our state,news_query
+5021,43,i like r. & b.,music_likeness
+5025,1,show us red,iot_hue_lightchange
+5028,0,is the twenty third of april a saturday,datetime_query
+5034,0,what is the week today,datetime_query
+5035,13,what is home town weather,weather_query
+5057,45,run music from this playlist,play_music
+5060,22,tell me when there is new news from my local news,news_query
+5063,1,change the opacity of the color,iot_hue_lightchange
+5064,1,replace color from light to dark,iot_hue_lightchange
+5069,24,turn wemo on,iot_wemo_on
+5084,48,set an alarm for six am,alarm_set
+5094,41,it's dark in here,iot_hue_lighton
+5099,52,olly cancel alarms,alarm_remove
+5100,52,siri cancel yoga alarms,alarm_remove
+5105,14,olly turn the volume up,audio_volume_up
+5107,28,google shuffle playlist,music_settings
+5108,45,play thinking out loud next,play_music
+5113,13,what will be the weather day after,weather_query
+5126,22,d. e. a. guam prescription drug abuse on the rise,news_query
+5142,13,could you please tell me what is the weather predication for this week,weather_query
+5150,56,would you set the coffee maker running,iot_coffee
+5154,40,it's too bright in here can you turn a light off,iot_hue_lightoff
+5175,13,what will the weather be like for this week,weather_query
+5180,43,please add this song to my playlist favorites,music_likeness
+5181,45,please play this song again,play_music
+5182,13,is it still going to be windy on thursday,weather_query
+5183,25,tell a joke,general_joke
+5184,22,olly give me the news on donald trump,news_query
+5186,22,olly is there any current news on the presidential election,news_query
+5189,13,how is weather likely to be in my area today,weather_query
+5202,40,kindly switch off the light in the drawing hall,iot_hue_lightoff
+5216,22,get me the most recent news,news_query
+5232,22,how many runs did cheteshwar pujara scored yesterday,news_query
+5236,45,play my gym playlist,play_music
+5242,40,please turn the lights off in the bathroom,iot_hue_lightoff
+5249,13,olly do i need to wear gloves today,weather_query
+5251,13,is umbrella necessary for my outing,weather_query
+5267,45,start play recently added playlist,play_music
+5280,22,show current news from b. b. c.,news_query
+5282,22,show b. b. c. news live,news_query
+5290,13,what's it like outside,weather_query
+5322,13,what is the weather like in miami florida today,weather_query
+5336,23,provide me the alarm times you have set,alarm_query
+5342,22,can you give me local news on wayne county sheriffs,news_query
+5352,45,play from my play list,play_music
+5359,38,switch to eastern time zone,datetime_convert
+5362,0,when does twenty fourth come in the next week,datetime_query
+5372,57,what's new on itunes,music_query
+5376,13,please show me weather on twenty seventh march two thousand seventeen,weather_query
+5382,22,how is the news in ireland,news_query
+5386,57,what is the song playing,music_query
+5393,14,turn the sound up,audio_volume_up
+5404,34,get the roomba to clean the kitchen,iot_cleaning
+5408,57,please give me detail of o. zaalima song,music_query
+5436,52,get rid of the five p. m. alarm,alarm_remove
+5449,45,run indian folk song,play_music
+5453,13,i need jacket after ten am or not,weather_query
+5456,22,i want to read yahoo news,news_query
+5461,13,should i bring gloves with me tonight,weather_query
+5462,13,do i need a jacket today,weather_query
+5471,18,olly brighten the lights,iot_hue_lightup
+5476,1,change the color of lights,iot_hue_lightchange
+5478,1,olly activate a different light color,iot_hue_lightchange
+5479,1,activate a different light color,iot_hue_lightchange
+5494,22,what is the latest poll on the public view of president trump,news_query
+5516,43,favorite this music,music_likeness
+5518,40,turn the room light off,iot_hue_lightoff
+5520,0,what day is the twenty second of may,datetime_query
+5526,46,set mute until said otherwise,audio_volume_mute
+5536,28,please repeat the current song is being played,music_settings
+5541,23,please let me know the morning alarm time for weekdays,alarm_query
+5546,12,thanks to ally for the photos,general_quirky
+5556,45,play some old school rap,play_music
+5561,22,read me the news for the day,news_query
+5565,22,did ben and jen get back together,news_query
+5567,48,set alarm on twenty fifth may at five p. m.,alarm_set
+5569,45,please turn on my music,play_music
+5581,45,assistant shuffle entire library,play_music
+5596,16,closest chipotle,takeaway_order
+5604,45,shuffle and play blue playlist,play_music
+5609,23,report alarm settings,alarm_query
+5621,13,temperature now,weather_query
+5632,45,shuffle and play all songs by gavenda artist,play_music
+5636,13,will i need sunblock this weekend,weather_query
+5638,13,should i pick up some defrosting salt at the store,weather_query
+5651,24,turn wemo plug socket on,iot_wemo_on
+5653,24,toggle wemo plug socket on,iot_wemo_on
+5655,0,just let me know the current date today,datetime_query
+5666,13,the weather updated to the using seconds per bit weatherit either updates forecasts from intellicast or weathercom both rather poor for my site,weather_query
+5667,23,tap start and then select settings,alarm_query
+5672,0,what time is it in tokyo japan,datetime_query
+5684,45,play party songs,play_music
+5690,45,ricky matin,play_music
+5696,34,start house cleaning,iot_cleaning
+5699,13,should i wear a jacket to work,weather_query
+5726,14,can you speak louder,audio_volume_up
+5728,18,every light of room increase its intensity,iot_hue_lightup
+5735,45,please play me the madonna song again,play_music
+5741,45,orevena voice recorder let me the system page is where to save songs,play_music
+5743,13,climate,weather_query
+5744,0,what day does my birthday fall on next year,datetime_query
+5746,0,what day of the week is twelfth,datetime_query
+5755,14,audio on,audio_volume_up
+5763,45,play artist,play_music
+5770,3,does restaurant royale deliver takeaway,takeaway_query
+5782,13,will there be fog after sunset,weather_query
+5788,13,its cold outside,weather_query
+5792,0,alarm clock,datetime_query
+5793,48,set an alarm for five o'clock this evening labeled taxi,alarm_set
+5816,13,weather in home town,weather_query
+5824,45,play fourth song of the same album after this song,play_music
+5832,45,alexa put classic rock on,play_music
+5854,34,activate robot vacuum,iot_cleaning
+5862,13,is this the hottest day in mangalore,weather_query
+5867,23,tell me about the alarm timings,alarm_query
+5882,12,meaning of a particular word,general_quirky
+5884,45,to listen music,play_music
+5937,13,i am need of an evening rain coat,weather_query
+5943,22,international trade and business market,news_query
+5957,46,can you please be muted for a while,audio_volume_mute
+5968,16,i want to order food,takeaway_order
+5982,23,at what time have you set alarm for me,alarm_query
+5989,56,i would like some coffee now,iot_coffee
+5990,56,prepare my morning coffee,iot_coffee
+6001,56,it's coffee time,iot_coffee
+6008,3,is my order at domino's ready,takeaway_query
+6009,3,when can i pick up my chinese food,takeaway_query
+6035,48,open clock,alarm_set
+6044,45,next play selected song,play_music
+6052,18,alexa increase the brightness of the light it is hard to see down here,iot_hue_lightup
+6071,3,is my order ready for pick up now,takeaway_query
+6079,48,alarm,alarm_set
+6089,13,do i need to take an umbrella with me this afternoon,weather_query
+6096,45,play song by daddy yankee,play_music
+6104,13,hey is it going to rain today in brooklyn new york,weather_query
+6105,13,hey olly how is the weather in long island new york,weather_query
+6107,45,play michael buble save the last dance,play_music
+6111,16,hey olly order two wings with french fries from the chinese food store,takeaway_order
+6115,16,hey olly order a pizza pie with extra cheese,takeaway_order
+6120,0,hey olly what time is it in orlando florida,datetime_query
+6131,45,play anything in my recent playlist,play_music
+6132,45,olly play anything in my recent playlist,play_music
+6135,57,give me information on the song that's playing,music_query
+6136,25,be funny for me,general_joke
+6140,13,olly should i wear my gloves or not,weather_query
+6144,13,tell me the weather for the following month,weather_query
+6158,34,turn on the vacuum,iot_cleaning
+6164,13,should i wear layers sometime today,weather_query
+6169,13,check on this week's weather report,weather_query
+6170,13,show me the one week forecast,weather_query
+6176,3,can i get delivery from here,takeaway_query
+6183,12,tube was super busy today,general_quirky
+6187,12,tell me about my day,general_quirky
+6188,12,dolores do you notice something odd about your world,general_quirky
+6193,12,do you want to hear what have happened today,general_quirky
+6198,12,how you know me,general_quirky
+6209,12,it would be great to dinner in this new opened restaurant downtown,general_quirky
+6236,12,olly how's it hangin,general_quirky
+6240,12,today i got rewards olly,general_quirky
+6246,12,i had a lot of meetings today,general_quirky
+6249,12,where are you from,general_quirky
+6259,12,the weather is sunny today,general_quirky
+6262,12,hey google i hit a million dollar lottery jackpot,general_quirky
+6265,22,tell me important news today,news_query
+6271,12,how is the day today,general_quirky
+6303,12,wakey wakey eggs and bakey,general_quirky
+6314,12,what's been going on,general_quirky
+6317,22,anything interesting in the news today,news_query
+6356,12,i got invited to the pub on saturday,general_quirky
+6361,12,tell me a good alcoholic drink,general_quirky
+6364,12,tell me something about america,general_quirky
+6367,12,sports,general_quirky
+6381,12,hey what are some good movies coming out soon,general_quirky
+6389,12,what do you do with my personal data,general_quirky
+6404,12,when i want it to take down notes,general_quirky
+6414,32,my weekly plan,calendar_query
+6420,12,trivia,general_quirky
+6422,12,wikipedia topics,general_quirky
+6425,12,what's up,general_quirky
+6452,12,breeds of dog that are most hypoallergenic,general_quirky
+6482,12,olly i got into a wreck today,general_quirky
+6483,12,i went to walmart today,general_quirky
+6490,25,sarcastic jokes,general_joke
+6493,22,entertainment news,news_query
+6499,12,mobile,general_quirky
+6502,12,i got drenched in the rain,general_quirky
+6513,12,fashion,general_quirky
+6520,32,schedule,calendar_query
+6522,12,get me answers,general_quirky
+6540,50,today needs to be marked as my cheat day,calendar_set
+6548,12,today was a tiring day,general_quirky
+6558,12,do you like my girlfriend,general_quirky
+6570,12,tell me about rihana,general_quirky
+6571,6,what's happening in ny,recommendation_events
+6595,12,what i did at this time,general_quirky
+6597,12,how was your day,general_quirky
+6599,12,the cosmos,general_quirky
+6603,12,heating levels at what times in the apt,general_quirky
+6607,25,jokes,general_joke
+6613,37,cooking,cooking_query
+6628,12,forecast rates,general_quirky
+6638,12,cars,general_quirky
+6640,12,very hectic,general_quirky
+6642,12,recent advice concerning google seo,general_quirky
+6648,25,joke of the day,general_joke
+6655,12,ingredients needed at grocery store,general_quirky
+6673,12,how's it going,general_quirky
+6675,12,if you could talk about three things what would they be,general_quirky
+6677,12,space research,general_quirky
+6692,12,books,general_quirky
+6699,12,gossiping about celebrities,general_quirky
+6723,32,olly what's my agenda for the remainder of the week,calendar_query
+6734,30,clear my day from meetings,calendar_remove
+6741,50,please put to my calendar daily stand-up to ten am,calendar_set
+6751,32,when is my next meeting,calendar_query
+6760,30,cancel my five p. m. daily call,calendar_remove
+6771,50,book a meeting with chelsea,calendar_set
+6775,12,when is it,general_quirky
+6778,32,do i have any events today,calendar_query
+6779,32,do i have anything booked for tomorrow,calendar_query
+6792,32,tell me about my events,calendar_query
+6808,30,remove all the events on my calendar,calendar_remove
+6821,50,olly remind me about the picnic at regent park,calendar_set
+6823,50,olly i want to go to the outdoor movie screening this weekend remind me,calendar_set
+6827,32,have you added a meeting with tom tomorrow at nine p. m.,calendar_query
+6831,30,delete all events for the next five days,calendar_remove
+6841,32,do i have any meetings tomorrow at nine p. m.,calendar_query
+6858,50,set up the following event in the calendar with the following people,calendar_set
+6873,30,can you erase the past event i visited,calendar_remove
+6875,32,do i have any upcoming events in my calendar,calendar_query
+6881,32,when is the next appointment on my calendar,calendar_query
+6883,30,delete the birthday party tomorrow at two p. m.,calendar_remove
+6898,30,can you delete all events from my calendar,calendar_remove
+6905,12,it's very tough one,general_quirky
+6908,50,i need a reminder every single day at nine am,calendar_set
+6912,32,who should i expect to be at the meeting today,calendar_query
+6914,50,put monday meeting on calendar every monday,calendar_set
+6920,50,set a notification for sixth march that there is a society meeting at eleven am,calendar_set
+6925,32,is there any program for tomorrow evening,calendar_query
+6927,30,delete all events and information,calendar_remove
+6929,30,remove all the events and schedules,calendar_remove
+6932,32,what is my event schedule tomorrow,calendar_query
+6939,50,remind me about tomorrow meeting at ten am,calendar_set
+6948,32,how many meetings do i have this week,calendar_query
+6952,30,wipe calendar clean,calendar_remove
+6963,50,please remind me one hour before the meeting i have tomorrow morning,calendar_set
+6985,32,what is my afternoon schedule tomorrow,calendar_query
+6990,32,upcoming events,calendar_query
+6991,32,latest events,calendar_query
+7007,50,set an appointment for allen on tomorrow,calendar_set
+7016,32,are there any upcoming events on my calendar,calendar_query
+7034,50,set a reminder for vacation next month,calendar_set
+7035,30,clear calendar for this month,calendar_remove
+7043,48,set an alarm for two hours from now please,alarm_set
+7052,32,do i have anything going on this saturday between two and four p. m.,calendar_query
+7064,30,please delete all of my calendar events for the rest of the day,calendar_remove
+7065,32,what events are in my calendar for today,calendar_query
+7066,32,what are my calendar event,calendar_query
+7070,32,do i have any reminders today,calendar_query
+7086,30,remove today's meeting at evening,calendar_remove
+7101,50,let me know the morning of my doctor appointment on the twelfth,calendar_set
+7104,50,make a calendar entry for brunch on saturday morning with chris kimberly and aaronson,calendar_set
+7108,50,remember me to meet reveca today at six p. m.,calendar_set
+7112,32,when is that meeting with my boss next week,calendar_query
+7131,30,delete the wedding on the tenth from my calendar,calendar_remove
+7134,32,what to do next on events,calendar_query
+7136,50,i have an appointment tomorrow remind me,calendar_set
+7164,50,four p. m.,calendar_set
+7169,50,olly i'll be seeing my therapist every thursday at two p. m.,calendar_set
+7174,30,cancel,calendar_remove
+7184,50,i want to go to sally's birthday on saturday at ten p. m.,calendar_set
+7201,32,what do i have going on next week,calendar_query
+7223,32,tell me the date of inauguration of my friend sams business,calendar_query
+7229,50,please mark my calendar for a holiday in cuba on april two,calendar_set
+7239,50,remind to at eight p. m. to take my medicine,calendar_set
+7244,32,when will the match start,calendar_query
+7255,30,what do i have scheduled for tomorrow i need to cancel,calendar_remove
+7260,50,set reminder for meeting at three p. m. tomorrow,calendar_set
+7279,50,remind me to pick up the laundry next monday,calendar_set
+7300,50,set a reminder that i have to visit my father tomorrow,calendar_set
+7305,50,add to the calendar a reunion event for this afternoon,calendar_set
+7309,32,what is my first appointment today,calendar_query
+7310,32,what's on my schedule for today,calendar_query
+7312,50,remind me to meet joe for lunch tomorrow,calendar_set
+7317,50,can you set the location to my sisters house for this event,calendar_set
+7341,30,do remove next event from the calendar,calendar_remove
+7345,50,add bola birthday of twelveth july to my calendar,calendar_set
+7351,50,in the calendar put that we are having dinner with frank at eight p. m. on the ninth of august,calendar_set
+7357,32,what are the list of events in my calendar in march,calendar_query
+7373,32,when is the wedding scheduled,calendar_query
+7374,32,what meetings are available in march,calendar_query
+7381,32,please check third event of twenty second of march twenty seventeen,calendar_query
+7401,50,add valentine's day with her tomorrow,calendar_set
+7402,50,add birthday with mom for next month,calendar_set
+7421,50,create a meeting with friend,calendar_set
+7424,50,attend party before the meeting,calendar_set
+7445,50,please create an event with only these people,calendar_set
+7458,50,remember to pick me up by twelve noon from the airport i have a three p. m. meeting,calendar_set
+7470,50,set meeting with jack on ten march,calendar_set
+7474,50,remember to fix a meeting between me and the players tomorrow evening by seven,calendar_set
+7486,32,what are my current alerts,calendar_query
+7495,50,remind me for tomorrow interview,calendar_set
+7505,32,up coming events,calendar_query
+7516,50,set event on recurring,calendar_set
+7517,50,schedule a meeting on tuesday,calendar_set
+7523,32,what we got in that meeting which held yesterday,calendar_query
+7530,50,please add my next meeting,calendar_set
+7541,50,set reminder for tomorrow for this item,calendar_set
+7555,50,call person a for meeting,calendar_set
+7571,32,when is the bill cycle,calendar_query
+7595,50,set a timer for five minutes for cookies,calendar_set
+7617,32,when does the hockey game start on friday,calendar_query
+7620,30,please delete all my calendar events,calendar_remove
+7627,50,remind me to make a pizza tomorrow morning,calendar_set
+7631,50,set twelve noon prayer for every friday,calendar_set
+7646,32,do i have any pending reminder,calendar_query
+7653,50,don't forget to remind me of my brother's birthday on april twenty,calendar_set
+7665,50,i want to add a lunch date with mike jim and bob,calendar_set
+7675,50,remind me the upcoming meeting at four am today,calendar_set
+7676,50,list out the upcoming meeting,calendar_set
+7682,30,find and delete all of my weekend events with evan parker,calendar_remove
+7684,50,note this event to my calendar,calendar_set
+7688,32,do i have any reminders pending,calendar_query
+7699,50,be sure to remind me of this,calendar_set
+7703,50,hey olly please set a reminder for tomorrow morning ten am meeting,calendar_set
+7720,32,please tell me the pending reminders,calendar_query
+7723,32,tell me about the meeting i have this week,calendar_query
+7727,50,i have a birthday on monday set the event,calendar_set
+7729,50,i have a flight to take on the fifteenth,calendar_set
+7731,50,set a event for the evening,calendar_set
+7732,50,set bob's birthday for every june third,calendar_set
+7734,50,remind me to go to the store every friday,calendar_set
+7738,30,delete grocery shopping from my saturday schedule,calendar_remove
+7747,30,remove all data from my calendar,calendar_remove
+7753,32,what do i have to do on monday,calendar_query
+7755,50,repeat an event in my calendar,calendar_set
+7766,30,are there ways to go ahead and clear my calendar for the month,calendar_remove
+7769,50,add my practice at king's park on feb four at two p. m.,calendar_set
+7780,50,please remind me about swatishs birthday,calendar_set
+7782,32,what does today's schedule look like,calendar_query
+7801,50,add a note to attend,calendar_set
+7804,50,make a repeating reminder for my work tasks every day at eight am,calendar_set
+7830,30,clear my schedule,calendar_remove
+7840,32,do i have anywhere to be between eight am and five p. m. today,calendar_query
+7846,32,what reminders are coming up this week,calendar_query
+7852,50,add event baseball practice five p. m. tonight,calendar_set
+7867,32,what does my morning look like tomorrow,calendar_query
+7871,32,who will be attending the meeting this friday,calendar_query
+7877,22,what happened between the second and the fifteenth,news_query
+7880,32,tell me all the events between today and the twenty first,calendar_query
+7893,50,please give me an update on the election every thirty minutes,calendar_set
+7907,32,do i have any appointments today,calendar_query
+7920,30,open calendar remove all events,calendar_remove
+7930,50,remind me about my biology test at fsu on friday,calendar_set
+7945,32,what is on november twenty,calendar_query
+7947,32,what is the schedule of the next maggie rogers concert,calendar_query
+7968,32,what do i need to know about the show,calendar_query
+7969,6,who and why is on at the theater tonight,recommendation_events
+7977,32,are there any reminders set for today,calendar_query
+7999,30,please remove the parent teacher conference scheduled on march seven,calendar_remove
+8014,32,do i have a meeting for today in my calendar,calendar_query
+8039,50,please set a reminder for me to go to work in ten minutes,calendar_set
+8046,32,how many meetings do i have next week,calendar_query
+8047,50,on february fourteenth make dinner reservations at the restaurant,calendar_set
+8057,32,what is happening this weekend,calendar_query
+8059,32,is this week trash pickup week,calendar_query
+8061,32,what time does the dinner party start tonight,calendar_query
+8063,32,when is my next reminder,calendar_query
+8068,32,tell me all known details about the tournament on march twenty two,calendar_query
+8069,50,schedule lunch at tomo in arcata california tomorrow at noon,calendar_set
+8072,32,do i have a date friday,calendar_query
+8078,50,send me a reminder to pick up my dog from the groomer at one p. m.,calendar_set
+8089,50,when is my meeting,calendar_set
+8101,33,olly email my appointments to reschedule,email_sendemail
+8122,50,alter lunch event to repeat every friday,calendar_set
+8127,50,meeting update my calendar to reflect meeting,calendar_set
+8132,32,when are the trains running tomorrow,calendar_query
+8133,50,set a remainder at three p. m. to pick jo,calendar_set
+8146,30,cancel my meeting on the fourteenth,calendar_remove
+8152,32,give me information about the concert on tuesday night,calendar_query
+8160,50,i need to be reminded that there is a meeting for paul's retirement set reminder for tuesday at three p. m.,calendar_set
+8192,6,what is happening at that event,recommendation_events
+8207,32,what do i have going on this morning between ten twelve,calendar_query
+8208,32,what time is the evening meeting i have with john,calendar_query
+8253,48,set a reminder i need to wake up at five am every morning,alarm_set
+8258,32,more about the concert in street pete,calendar_query
+8263,50,olly remind me about tomorrow's meeting tonight,calendar_set
+8270,50,notification of meeting on wednesday,calendar_set
+8272,50,add my upcoming meeting to my calendar,calendar_set
+8282,30,completely clear my calendar please,calendar_remove
+8287,30,please delete the meeting i have with john tonight,calendar_remove
+8311,50,set a reminder for wednesdays at two p. m.,calendar_set
+8315,32,is it true that susan's birthday is on march first,calendar_query
+8323,32,did you add tomorrow's meeting to my calendar,calendar_query
+8325,50,add lunch meetings at noon every day this week,calendar_set
+8329,50,set a reminder for the meeting friday at three p. m.,calendar_set
+8333,30,remove everything from the calendar,calendar_remove
+8372,30,hey siri make sure my calendar is completely clear tomorrow,calendar_remove
+8373,50,new notification for meeting in two hours,calendar_set
+8377,50,remind me about calendar,calendar_set
+8384,32,are there any pending appointments this morning,calendar_query
+8385,32,is this week a payday week,calendar_query
+8417,30,cancel all appointments in my calendar,calendar_remove
+8418,32,what reminders do i have set,calendar_query
+8425,32,what's the news for six hundred and forty five am today,calendar_query
+8434,30,remove my event at one p. m. in my calendar,calendar_remove
+8446,50,olly remind me i need to be at the library a week from today at five,calendar_set
+8447,50,set a reminder for next saturday go to the library at five o'clock,calendar_set
+8451,50,remind me about the upcoming national holiday,calendar_set
+8463,30,remove my calendar event at one p. m. today,calendar_remove
+8479,50,set a reminder for my meeting at five p. m.,calendar_set
+8487,50,please add an appointment at nine am wednesday at doctor greens office,calendar_set
+8491,32,what were the highlights from this evening's soccer match,calendar_query
+8493,32,tell me what is on my schedule for today,calendar_query
+8510,32,when is bruno mars coming to sacramento,calendar_query
+8522,50,i want to add something to my calendar,calendar_set
+8528,30,clear event from calendar and refresh,calendar_remove
+8543,32,what events do i have coming up,calendar_query
+8548,30,delete the next event on the calendar,calendar_remove
+8549,30,please cancel the next event on the calendar,calendar_remove
+8578,32,what meetings do i have between eight ten today,calendar_query
+8592,50,remind me tomorrow at two p. m.,calendar_set
+8594,50,schedule an event in my calendar for the pool party at jack's place this saturday,calendar_set
+8602,32,what is the address for the event scheduled on the first of january,calendar_query
+8606,50,i want to meet with sara tomorrow,calendar_set
+8609,50,cancel my meeting with lisa on tuesday and reschedule it for thursday,calendar_set
+8612,30,remove thursday's lunch from my calendar,calendar_remove
+8619,50,set and event for the fifteenth of every month to remind me to pay my internet bill,calendar_set
+8622,50,add the following date and time to my calendar,calendar_set
+8626,32,when is the event,calendar_query
+8655,50,add an event starting at three p. m. in goshen new york on may fifth for dan's graduation,calendar_set
+8668,32,in the last year how many hours have i been in meetings,calendar_query
+8677,30,delete meeting,calendar_remove
+8697,50,i have a meeting with al on march twenty first at ten,calendar_set
+8699,32,i needed to prepare for a meeting,calendar_query
+8707,32,show my upcoming events,calendar_query
+8714,30,delete from the calendar the next event,calendar_remove
+8723,32,does my calendar say i'm free on april one two thousand and seventeen,calendar_query
+8729,50,set a weekly appointment reminder,calendar_set
+8749,50,flag two day after this day as my holiday,calendar_set
+8751,50,tuesday meeting noon,calendar_set
+8752,32,do i have anything scheduled for march seventh,calendar_query
+8753,50,olly schedule my doctors appointment on friday at two p. m.,calendar_set
+8755,50,can you please add my dinner reservations to my calendar,calendar_set
+8778,50,set calendar info for albert's marriage,calendar_set
+8783,32,do i have any calendar events today,calendar_query
+8786,6,searching on holidays in my location,recommendation_events
+8788,6,searching for recent happenings on the particular dates,recommendation_events
+8800,32,do i have any reminders on my list,calendar_query
+8802,50,please remind me of,calendar_set
+8803,48,please set alarm for,alarm_set
+8808,50,do i need to be reminded of any meetings on monday,calendar_set
+8829,32,is calendar event false,calendar_query
+8834,30,remove all my meetings for the rest of the week,calendar_remove
+8842,50,add to calendar may two is mary's birthday repeat every year,calendar_set
+8847,50,i want you to remind me to take my rain coat because it may rain,calendar_set
+8848,50,please tell me to take my umbrella because it will be very hot today,calendar_set
+8859,32,what is my schedule for june fourteenth two thousand and seventeen,calendar_query
+8863,30,please delete all reminder of sunday,calendar_remove
+8873,50,remember dinner on thursday at bistro italia,calendar_set
+8890,50,set reminder,calendar_set
+8895,50,calendar event with these people,calendar_set
+8896,30,clear my schedule for today,calendar_remove
+8899,32,details,calendar_query
+8903,32,tell about latest events,calendar_query
+8928,32,when are the meetings,calendar_query
+8933,32,when is the party scheduled,calendar_query
+8934,50,notify me with all events in the next one week,calendar_set
+8938,50,john marriage anniversary,calendar_set
+8941,32,when are holiday in current month,calendar_query
+8953,50,let me know of the meeting on tuesday,calendar_set
+8959,50,i want you to remind me about the evening program,calendar_set
+8984,30,delete eric's b. day from the calendar,calendar_remove
+9002,50,ok google schedule a meeting with the v. p. of the department on the twenty first of march two thousand and seventeen,calendar_set
+9004,50,i need a meeting with the c. f. o. on thursday,calendar_set
+9008,30,remove birthday event from my calendar,calendar_remove
+9013,50,remind me on fifth april there is a meeting with boss,calendar_set
+9023,50,create a reminder for visa application on this thursday,calendar_set
+9040,30,make blank on july three calendar,calendar_remove
+9049,48,set an alarm for four p. m. tuesday,alarm_set
+9051,50,make an event reminder for monas wedding on tuesday,calendar_set
+9065,50,put a repeating event on the calendar,calendar_set
+9067,32,am i busy this weekend,calendar_query
+9069,32,olly do i have an appointment next week,calendar_query
+9082,30,delete day after event,calendar_remove
+9097,50,remind the required events to be reset,calendar_set
+9123,50,add my sister visiting to my family calendar,calendar_set
+9127,49,where is the convention center located,qa_factoid
+9136,32,any meeting on friday,calendar_query
+9144,50,remind me that i have an appointment twelve o'clock on saturday,calendar_set
+9164,32,olly do i have any calendar events this month,calendar_query
+9171,50,olly make a calendar entry for next saturday at ten am please,calendar_set
+9179,50,remind me of the meeting on the twenty second of january,calendar_set
+9189,50,remind me about the meeting in one hour,calendar_set
+9190,50,remind me in one hour about my meeting,calendar_set
+9208,36,play some radio,play_radio
+9211,36,showcase the radio,play_radio
+9214,36,open pandora play rock station,play_radio
+9215,36,open iheartradio rov the rock,play_radio
+9228,36,tune a radio channel for good jokes,play_radio
+9249,36,start radio,play_radio
+9253,36,shoutcast dot com,play_radio
+9256,36,put the radio on,play_radio
+9280,36,please tune the radio channel,play_radio
+9281,36,i wish to listen that radio channel,play_radio
+9287,36,switch on radio,play_radio
+9299,36,can you start f. m. eight hundred and ninety radio channel,play_radio
+9310,36,play tunes,play_radio
+9325,36,turn it to frequency nine hundred and ninety seven,play_radio
+9340,36,turn on channel nine hundred and fifty one,play_radio
+9343,36,please play the radio,play_radio
+9355,36,radio on,play_radio
+9369,36,go to my favorite radio channel,play_radio
+9371,45,play a song that will make me smile,play_music
+9375,36,play nine hundred and seventy one,play_radio
+9382,36,play b. b. c. radio four please,play_radio
+9383,36,play b. b. c. radio one,play_radio
+9391,36,please open my f. m. radio and play nine hundred and eighty seven,play_radio
+9425,36,olly i want to hear a station that plays r. & b.,play_radio
+9428,36,play the football game on the radio,play_radio
+9432,36,how many of my sports podcasts have new episodes i have not listened to yet,play_radio
+9442,36,open pandora and play top hits,play_radio
+9447,36,please play popular music on pandora,play_radio
+9453,36,play famosa radio for me,play_radio
+9454,36,get me some radio music from kamp f. m.,play_radio
+9459,45,please play top country,play_music
+9489,36,play music programs in radio,play_radio
+9492,45,play the current playlist,play_music
+9500,36,find joel osteen's broadcast on sirius,play_radio
+9512,36,play the station one hundred and two point four the buzz,play_radio
+9518,36,play news in f. m.,play_radio
+9521,36,play the neal brennan episode of wait wait don't tell me,play_radio
+9534,36,play ninety three point five f. m.,play_radio
+9580,36,play a news radio station,play_radio
+9589,36,ok google can you start ryan seacrest,play_radio
+9593,36,play my favorite station at nine p. m.,play_radio
+9599,36,pdr am radio,play_radio
+9606,36,play the programs in this required pad's,play_radio
+9612,36,what stations are playing good music this morning,play_radio
+9614,36,tune into ninety nine point five f. m.,play_radio
+9615,36,play a country station,play_radio
+9633,36,turn to billy bob show,play_radio
+9642,36,play b. b. c. radio four,play_radio
+9660,36,play this program,play_radio
+9673,20,can you play my favorite audio book of harry potter,play_audiobook
+9677,20,can you put on the chuck palhunik audio book,play_audiobook
+9688,20,start chapter seven of alma,play_audiobook
+9692,20,resume audio book history of rome,play_audiobook
+9709,20,can you pause the audio,play_audiobook
+9712,20,continue playing my audiobook,play_audiobook
+9725,20,pause the audiobook,play_audiobook
+9733,20,open the davinci code where i left off,play_audiobook
+9734,20,start play johns audiobook,play_audiobook
+9736,20,play recently added audiobook,play_audiobook
+9743,20,play audio,play_audiobook
+9756,20,resume my audiobook where we paused last,play_audiobook
+9765,20,resume last played audiobook,play_audiobook
+9771,20,please play recently paused audio,play_audiobook
+9775,20,resume my audiobook from the beginning of the last chapter i started,play_audiobook
+9778,20,play the circle,play_audiobook
+9783,20,lets have a break for five minutes,play_audiobook
+9787,20,start reading book,play_audiobook
+9798,20,resume the last kingdom for me,play_audiobook
+9811,20,open harrypotter audiobook and play from last played,play_audiobook
+9816,20,look for this playback in audiobook and play for me,play_audiobook
+9817,20,please resume this playback in audiobook,play_audiobook
+9822,20,listen to the martian from downpour,play_audiobook
+9831,20,start reading fifty shades of grey from chapter four,play_audiobook
+9834,20,resume a song from the audiobook by michael jackson,play_audiobook
+9838,20,play audiobook snow white,play_audiobook
+9840,20,can you continue audiobook the circle,play_audiobook
+9849,20,audio book play jai ho,play_audiobook
+9863,20,resume the reading of the french lesson,play_audiobook
+9872,20,please play back some important points summary,play_audiobook
+9874,20,start reading that alan partridge book,play_audiobook
+9876,20,continue with my audiobook please,play_audiobook
+9889,20,continue playing my book of vitamins,play_audiobook
+9892,20,olly resume the two towers,play_audiobook
+9907,20,play from this point from this audiobook,play_audiobook
+9921,9,tell me how to make garlic bread,cooking_recipe
+9926,9,how much time to cook pasta,cooking_recipe
+9934,9,what can i cook with broccoli and chicken,cooking_recipe
+9951,9,instruct me to cook,cooking_recipe
+9965,9,how can i cook pasta,cooking_recipe
+9968,9,what ingredient can be used to replace white wine,cooking_recipe
+9978,9,could you please display the videos for cooking italian food,cooking_recipe
+9982,9,olly how do i make lobster bisque,cooking_recipe
+9993,9,how is pav bhaji cooked,cooking_recipe
+9996,9,what the sexiest food to cook on a date,cooking_recipe
+9999,9,for how much time should i oven pizza to make it perfect crispy,cooking_recipe
+10017,9,how do you cook black eye pea,cooking_recipe
+10020,9,give me recipes,cooking_recipe
+10022,9,use google to show me how to cook,cooking_recipe
+10037,9,give me best cooking ideas,cooking_recipe
+10039,9,show me the recipe for cookies,cooking_recipe
+10041,9,how do i make cookies,cooking_recipe
+10058,9,how many cups are in a quart,cooking_recipe
+10070,9,how do i bake a potato,cooking_recipe
+10086,9,look for a pizza recipe,cooking_recipe
+10110,9,how do i make meatloaf,cooking_recipe
+10129,9,find me a recipe for chicken noodle soup,cooking_recipe
+10135,9,search for gluten free menus,cooking_recipe
+10138,9,show me how to cook a recipe,cooking_recipe
+10143,9,how long do i chill an icebox pie,cooking_recipe
+10146,9,how do you cook a four cheese omelet,cooking_recipe
+10152,9,get recipe for making a hotdog,cooking_recipe
+10154,9,crockpot recipe for chicken alfredo,cooking_recipe
+10157,9,can you pull up a recipe for spaghetti,cooking_recipe
+10162,9,bring up a recipe for turkey meatballs,cooking_recipe
+10169,9,recipes,cooking_recipe
+10186,9,how long do i roast chicken breasts,cooking_recipe
+10195,9,recipe for crabmeat,cooking_recipe
+10196,9,i need some ideas for dinner that are mexican,cooking_recipe
+10210,9,no more comments,cooking_recipe
+10218,9,what is the cooking time for boiled eggs,cooking_recipe
+10237,9,find easy recipe for almond milk,cooking_recipe
+10238,9,find recipe chicken casserole,cooking_recipe
+10242,9,look up meal recipe,cooking_recipe
+10245,51,alexa play chess with me,play_game
+10255,51,i feel like playing chess can you play that,play_game
+10267,51,how about a nice game of chess,play_game
+10273,51,play solitaire,play_game
+10279,51,play a race game,play_game
+10290,51,lets play pinball,play_game
+10291,51,start play spider,play_game
+10293,51,want to play a game with me,play_game
+10295,51,i want you to play my soccer game from fifth level,play_game
+10301,51,want to play a game of trivia,play_game
+10303,51,find game,play_game
+10324,51,play snake with me,play_game
+10327,51,lets solve the puzzle,play_game
+10351,51,open papa pear saga,play_game
+10361,51,let's play checkers,play_game
+10364,51,play games,play_game
+10367,51,can you take a role of enemy in the game of coc,play_game
+10374,51,play chess with me please,play_game
+10388,51,can you do name that tune,play_game
+10397,51,could you play poker with me,play_game
+10412,51,let us play millionaires,play_game
+10415,51,lets play tic tac toe,play_game
+10424,59,list the items on my shopping list olly,lists_query
+10449,53,i'd like to cancel the trip to vegas next week,lists_remove
+10450,59,what is on my shopping list today,lists_query
+10453,53,cross out bread from shopping list,lists_remove
+10457,59,add vodka to my party shopping list,lists_query
+10458,53,remove a list of things to buy,lists_remove
+10468,21,can you create a new list,lists_createoradd
+10470,53,remove a list of food items purchased last week,lists_remove
+10475,53,it's depend pon the seen,lists_remove
+10486,53,clear list,lists_remove
+10488,21,make list,lists_createoradd
+10496,59,which grocery stores have i mad a list with,lists_query
+10506,59,what are my lists,lists_query
+10518,59,what lists are available,lists_query
+10520,53,find list and remove apple,lists_remove
+10521,53,erase my old english songs list,lists_remove
+10526,53,please remove a list,lists_remove
+10529,21,add this item to the list,lists_createoradd
+10532,59,what were the last five lists i made,lists_query
+10539,59,send me the last list uploaded,lists_query
+10545,21,make a list of numbers for me,lists_createoradd
+10548,21,create a new list for me please,lists_createoradd
+10551,59,what's on my to do list for today,lists_query
+10554,12,what am i doing today,general_quirky
+10555,59,check item five on my to do list,lists_query
+10557,59,please show my list,lists_query
+10589,53,remove the excel file from the list,lists_remove
+10602,57,tell me a play list,music_query
+10605,59,how many food items on the list,lists_query
+10614,53,the list should not contain all food items with the prefix dry,lists_remove
+10616,21,by tomorrow create a new list,lists_createoradd
+10626,21,make a new list,lists_createoradd
+10627,21,put pencil on a new grocery list,lists_createoradd
+10629,53,please remove this item from the list,lists_remove
+10648,21,add grocery to list,lists_createoradd
+10666,59,read the list,lists_query
+10672,59,bing up my list,lists_query
+10685,59,tell me what lists i have,lists_query
+10689,53,remove item three,lists_remove
+10697,59,what does the list contain,lists_query
+10700,21,please add this item to the list,lists_createoradd
+10728,59,display available lists,lists_query
+10730,59,can you please tell me what i have on my list,lists_query
+10732,53,remove pepper from my grocery list,lists_remove
+10741,21,add something to my list,lists_createoradd
+10746,53,remove that item from my list,lists_remove
+10751,59,google translate,lists_query
+10754,59,read back what i put on my to do list for this week,lists_query
+10758,59,read shopping list items,lists_query
+10763,21,add cereal to my shopping list,lists_createoradd
+10767,59,are eggs on my shopping list,lists_query
+10775,59,do i have a list of contacts for the party i'm planning,lists_query
+10784,53,delete my to do list,lists_remove
+10791,53,remove item from list,lists_remove
+10797,21,please add milk to the grocery list,lists_createoradd
+10806,59,will you please show me my lists,lists_query
+10817,53,open lists remove list,lists_remove
+10830,59,olly what's next on my list,lists_query
+10844,53,take milk off my grocery list,lists_remove
+10850,59,please tell me what lists i have made,lists_query
+10854,53,rearrange that off the list,lists_remove
+10860,53,drop it from list,lists_remove
+10865,59,olly what else do i have on the list,lists_query
+10870,21,add buy groceries to my to do list for today,lists_createoradd
+10883,53,please tell me how can i remove the item,lists_remove
+10886,59,can i check my lists,lists_query
+10889,59,did i make a shopping list,lists_query
+10896,53,remove item from my list,lists_remove
+10901,21,create a new list of,lists_createoradd
+10904,59,tell me the list about,lists_query
+10916,53,please remove the first list,lists_remove
+10924,30,remove meeting for wednesday morning,calendar_remove
+10925,21,create a new list of my pending bills,lists_createoradd
+10928,59,read my list to me,lists_query
+10929,59,give me my list,lists_query
+10941,21,make a list for work,lists_createoradd
+10952,53,please delete list titled kickball,lists_remove
+10962,53,i don't want this list any more,lists_remove
+10965,59,do i have anything on my to do list,lists_query
+10967,59,what lists are currently available right now,lists_query
+10969,53,delete the last line,lists_remove
+10973,21,create a new list for school supplies,lists_createoradd
+10988,53,delete call newspaper from my vacation list,lists_remove
+11004,59,read out my shopping list for today,lists_query
+11007,59,what is on the list for today,lists_query
+11014,21,include an item to a list,lists_createoradd
+11020,53,take grocery buying off of the list,lists_remove
+11022,53,we're out of paint so take bathroom painting off the list,lists_remove
+11041,21,remind me to order more soap,lists_createoradd
+11045,59,open my list,lists_query
+11047,53,remove last played song,lists_remove
+11061,15,please add tom to my contact list,email_addcontact
+11063,59,can you read me my lists,lists_query
+11064,59,hey what are my lists,lists_query
+11065,59,hey olly what are my lists,lists_query
+11070,59,can you tell me what the items on my grocery list are,lists_query
+11076,59,what is that on the list,lists_query
+11077,59,tell me what's on my list,lists_query
+11079,53,remove a list,lists_remove
+11084,53,cancel the milk from the shopping list,lists_remove
+11086,21,add milk to my grocery list,lists_createoradd
+11096,53,remove the santana music list,lists_remove
+11109,59,what is on this specific list,lists_query
+11119,59,can i see my work lists,lists_query
+11122,21,add this to a list,lists_createoradd
+11131,53,please remove my to do list from today,lists_remove
+11160,53,i don't want eggs,lists_remove
+11169,59,list the available's,lists_query
+11178,21,create a list of monthly groceries to be bought,lists_createoradd
+11181,32,my work schedule,calendar_query
+11182,59,my health planning,lists_query
+11196,21,add pastries to the christmas list,lists_createoradd
+11200,53,remove the list of things to do,lists_remove
+11212,21,delete the old playlist and create new,lists_createoradd
+11214,59,check list,lists_query
+11245,59,how many items are on my to do list,lists_query
+11256,59,check my list,lists_query
+11281,58,can you forward an episode in the podcast,play_podcasts
+11283,58,play next episode,play_podcasts
+11294,58,locate my podcast,play_podcasts
+11300,58,proceed to the next episode,play_podcasts
+11305,58,play newest reason podcast,play_podcasts
+11324,58,move to the next episode,play_podcasts
+11326,58,play the seventh episode of the morning after,play_podcasts
+11332,45,find and make a playlist of all the latest dancing tracks,play_music
+11333,45,arrange and play all songs of eminem,play_music
+11338,58,plays the podcast from the beginning,play_podcasts
+11348,58,hey play that podcast i stopped last night,play_podcasts
+11358,58,skip to next podcast,play_podcasts
+11363,58,replay the following podcast,play_podcasts
+11364,58,skip to the next podcast,play_podcasts
+11370,58,i want to listen to m. c.'s podcast,play_podcasts
+11372,58,favorite,play_podcasts
+11374,58,go forward please,play_podcasts
+11377,58,find podcast and play it,play_podcasts
+11385,45,can you play my music file,play_music
+11399,58,skip to the next episode,play_podcasts
+11406,58,end this podcast start anew,play_podcasts
+11419,58,listen to duncan trussel's latest podcast,play_podcasts
+11440,58,play the last next episode,play_podcasts
+11450,58,start podcast m. l. b. daily,play_podcasts
+11463,58,show me the top rated podcasts,play_podcasts
+11477,58,play episode of stuff you should know in queue,play_podcasts
+11487,45,play classic songs,play_music
+11496,58,play good mythical morning podcast,play_podcasts
+11500,58,back one episode,play_podcasts
+11503,58,rewind button,play_podcasts
+11509,58,show me the last episode,play_podcasts
+11513,58,olly play heavyweight podcast,play_podcasts
+11530,58,play the podcast of barack obama saved in device,play_podcasts
+11548,58,network podcast,play_podcasts
+11552,58,much more clearer and subject oriented,play_podcasts
+11553,58,short and simple,play_podcasts
+11557,58,play the most current episode of levin,play_podcasts
+11562,58,i want to hear this podcast,play_podcasts
+11583,55,what new movies are played in cinemas this week,recommendation_movies
+11596,6,are there dog shows going on near new york city,recommendation_events
+11608,19,where is the nearest pub in the city,recommendation_locations
+11611,6,what concerts are due nearby,recommendation_events
+11615,55,what movies are being shown at the regal cinema,recommendation_movies
+11617,6,what exhibits or shows are scheduled at the metropolitan theater,recommendation_events
+11621,6,what events are happening near me,recommendation_events
+11624,19,where should i go for mexican food in my area,recommendation_locations
+11631,19,i need some sushi what's closest,recommendation_locations
+11654,19,search for nearby chinese restaurants,recommendation_locations
+11658,6,where is the food festival tonight,recommendation_events
+11666,19,i'm looking for some dress shows can you find clothing stores within one mile,recommendation_locations
+11675,19,where is the closest restaurant,recommendation_locations
+11690,19,olly pinpoint me the location of the shop,recommendation_locations
+11693,55,what new movies available today,recommendation_movies
+11699,19,show me some food court nearest to my location,recommendation_locations
+11708,19,any good bike shops in oxford,recommendation_locations
+11711,19,best bar in local area,recommendation_locations
+11712,6,tell me all local events,recommendation_events
+11716,19,near by grocery,recommendation_locations
+11721,55,which rom com movie can i watch in theaters around new york,recommendation_movies
+11729,6,make a to do list while visiting the yellow stone national park,recommendation_events
+11730,6,which things should i do when i visit the yellowstone national park,recommendation_events
+11732,6,what's going on around me,recommendation_events
+11740,55,theaters near to me,recommendation_movies
+11743,6,which book fair events are taking place next week in washington d. c.,recommendation_events
+11745,55,what is the nearest theater that plays the new vin diesel movie,recommendation_movies
+11762,6,what events are going on in new york city,recommendation_events
+11785,55,logan,recommendation_movies
+11795,19,who sells the cheapest netbooks in south austin,recommendation_locations
+11800,19,what's the best clothes store here,recommendation_locations
+11819,19,find a shop that sells beer,recommendation_locations
+11849,55,what movies are playing at theaters near me,recommendation_movies
+11851,55,what are movies that are playing near me with high reviews,recommendation_movies
+11857,55,movies with good rotten tomato ratings,recommendation_movies
+11876,6,what activities are taking place in my area,recommendation_events
+11883,6,which flags ride is the best,recommendation_events
+11899,55,what's worth watching,recommendation_movies
+11906,6,tell me about activities in my area this weekend,recommendation_events
+11928,6,what's going on in la,recommendation_events
+11933,19,what kind of shops are near my locality,recommendation_locations
+11945,19,can you recommend a cheap restaurant in this area,recommendation_locations
+11948,19,olly what are some restaurants near me,recommendation_locations
+11952,19,where can i find the nearest irish pub in my area,recommendation_locations
+11962,19,olly what bars are around me,recommendation_locations
+11980,6,show me all the events happening in milan,recommendation_events
+11998,6,tell me what's going on in my city,recommendation_events
+12006,6,what is going on in la today,recommendation_events
+12022,19,how many grocery stores are located in my neighborhood,recommendation_locations
+12039,19,ask a restaurant in my area,recommendation_locations
+12044,19,i'm starving what's good to eat in cincinnati,recommendation_locations
+12045,19,olly where can i got to grab some drinks in west chester,recommendation_locations
+12055,6,today's local events,recommendation_events
+12076,19,list all the nearby shops,recommendation_locations
+12095,19,can you recommend any pub in milligrams road,recommendation_locations
+12096,6,what's going on around the neighborhood,recommendation_events
+12107,19,i need a place that will deliver pizza to me in benton are,recommendation_locations
+12108,19,is there any chinese places in benton are,recommendation_locations
+12119,6,please search for events in my location,recommendation_events
+12125,2,hey olly i want to get trains to manchester on wednesday,transport_ticket
+12134,42,when's the next train to cornwall,transport_query
+12136,42,what's the best way to france,transport_query
+12144,54,i am going to chinatown in half an hour book an uber for me,transport_taxi
+12149,2,olly book a ticket to paris on eurostar at five p. m. this friday,transport_ticket
+12165,2,book my chair class a. c. train ticket from manhattan to new york,transport_ticket
+12168,11,how is the traffic situation in houston street,transport_traffic
+12174,54,call me an uber for right now,transport_taxi
+12177,11,is there more traffic in canal street,transport_traffic
+12178,11,how much traffic is there right now in bowery street,transport_traffic
+12181,54,send an uber to me right now,transport_taxi
+12185,42,where is the train station,transport_query
+12205,54,could you please have uber be at my house in fifteen minutes,transport_taxi
+12206,54,i need a taxi to take me to the airport please,transport_taxi
+12217,2,book me a plane ticket,transport_ticket
+12232,54,look for a taxi to go home,transport_taxi
+12236,54,book uber from my home,transport_taxi
+12247,42,can you please let me know the next four scheduled trains to chicago,transport_query
+12253,11,how is the traffic in milligrams road,transport_traffic
+12258,11,how is traffic,transport_traffic
+12260,42,get me an amtrak ticket to boston for next thursday the later the better,transport_query
+12267,42,what is the schedule time of punjab mail to reach gwalior,transport_query
+12284,42,when is the next train to b. street,transport_query
+12298,54,lets get a taxi,transport_taxi
+12302,42,direct me towards nearest railway station,transport_query
+12303,42,train time from brooklyn to queens,transport_query
+12307,2,search for two tickets on tuesday's train to paris,transport_ticket
+12317,11,what is the condition of traffic from work to home,transport_traffic
+12318,11,tell me the traffic condition from here to home,transport_traffic
+12322,54,reserve a taxi,transport_taxi
+12325,2,coach and fare,transport_ticket
+12345,11,in delhi traffic level too high,transport_traffic
+12352,54,book a taxi to the airport for tomorrow morning,transport_taxi
+12358,11,i would like to know the traffic condition,transport_traffic
+12363,54,book my nearest available taxi,transport_taxi
+12368,42,how do i get to brighton,transport_query
+12372,54,get me an uber,transport_taxi
+12373,54,book a taxi,transport_taxi
+12380,2,repurchase last train ticket to phillyx,transport_ticket
+12394,2,buy me today train ticket to city leeds,transport_ticket
+12408,42,directions to nearest apple store,transport_query
+12414,11,give me the idea of current traffic condition,transport_traffic
+12438,42,what are the train times to travel from new york city to poughkeepsie,transport_query
+12439,42,how do i get to poughkeepsie from new york city,transport_query
+12441,11,how is the traffic from home to work,transport_traffic
+12451,54,catch a ride,transport_taxi
+12455,42,what are the train times on the twenty third to clarksville,transport_query
+12461,2,purchase train ticket,transport_ticket
+12464,54,need a taxi tomorrow at eight in the morning,transport_taxi
+12470,2,book ticket to depart in the morning,transport_ticket
+12478,54,find an uber driver available for tonight after ten p. m.,transport_taxi
+12484,42,what time does the train leave for chicago,transport_query
+12488,2,can you book me a train ticket to boston for next tuesday,transport_ticket
+12504,42,what time does the train leave philadelphia,transport_query
+12505,42,when is the next septa train to philadelphia,transport_query
+12527,54,get me the number for local taxi service,transport_taxi
+12533,42,give me directions for the place,transport_query
+12550,42,directions to disney world,transport_query
+12554,54,i need to get to location call a cab,transport_taxi
+12565,42,i'd like a listing of all train ticket prices for this location please,transport_query
+12575,2,i need to go to lyon book a train ticket,transport_ticket
+12587,42,what are the train times from san francisco to new york,transport_query
+12593,2,olly please purchase me a train ticket to atlanta,transport_ticket
+12602,42,how much for a train ticket,transport_query
+12617,42,please send me info on how to go about purchasing a train ticket to new york,transport_query
+12625,42,can you give me train times for ann arbor,transport_query
+12627,2,book me a train ticket to chicago for tomorrow morning before ten,transport_ticket
+12651,42,i want to go to bank of america give me directions,transport_query
+12654,2,please order one train ticket to los angeles,transport_ticket
+12656,54,i need a taxi at eight tomorrow morning to take me to work,transport_taxi
+12665,11,current traffic,transport_traffic
+12667,42,what are the train times for,transport_query
+12669,11,could you please check the traffic to our home,transport_traffic
+12674,11,is traffic heavy,transport_traffic
+12680,2,buy me a ticket to take the train to atlanta,transport_ticket
+12692,11,how much traffic does atlanta georgia usually have,transport_traffic
+12706,2,book train ticket for this time,transport_ticket
+12711,54,set up uber,transport_taxi
+12712,54,find me a ride to the mall of america please,transport_taxi
+12715,54,call a taxi to pick me up right now,transport_taxi
+12729,11,are there any traffic issues,transport_traffic
+12740,42,what is the route to the closest mcdonalds,transport_query
+12741,42,what street do i take to get to downtown,transport_query
+12748,2,i need to buy a train ticket,transport_ticket
+12764,2,book a train ticket to,transport_ticket
+12768,42,how much is a train ticket to san fransisco,transport_query
+12781,54,request a taxi from udrive service,transport_taxi
+12783,11,what is the traffic this morning,transport_traffic
+12787,11,what is the traffic now,transport_traffic
+12791,11,how is the traffic near me,transport_traffic
+12810,11,what is current traffic in ohio,transport_traffic
+12827,42,list all train time to ny,transport_query
+12828,42,show all train and time to ny,transport_query
+12834,2,get me a train ticket to chicago today,transport_ticket
+12840,42,what is the quickest way to grand central,transport_query
+12854,2,open irctc application and go to book ticket,transport_ticket
+12872,2,book for me a train ticket to washingdon d. c.,transport_ticket
+12877,54,book a taxi for pickup at my current location in one hour's time,transport_taxi
+12885,11,which route has less traffic today,transport_traffic
+12886,2,book my train ticket to new york,transport_ticket
+12888,54,get me a taxi to take me to the airport on friday at five thirty am,transport_taxi
+12891,2,get me a ride on the commuter train from nj to ny,transport_ticket
+12892,42,could you list out the list of trains heading to chester the day after,transport_query
+12895,11,is the road in some particular area wide or narrow,transport_traffic
+12899,2,reserve a seat for me on the train march twentieth,transport_ticket
+12901,42,please let me know the time of train northern rail,transport_query
+12904,54,please book the next taxi,transport_taxi
+12919,54,open the uber app and get me a car please,transport_taxi
+12923,42,hey what time can i catch the nearest train to me,transport_query
+12944,26,find a definition,qa_definition
+12947,49,who is president of poland,qa_factoid
+12950,10,what currency does croatia use,qa_currency
+12952,49,how tall is a giraffe,qa_factoid
+12956,26,in what scenario would you use word inconvenience,qa_definition
+12974,49,calculate the resistance of this resistor,qa_factoid
+12977,39,google,qa_maths
+12978,39,browsing centers,qa_maths
+12980,26,tell me the brief definition of evacuation,qa_definition
+13011,12,do you think time travel is possible,general_quirky
+13022,49,what age is britney spears,qa_factoid
+13024,33,email friend,email_sendemail
+13029,12,explain to me about what different countries are represented in the book of revelation,general_quirky
+13033,39,what is three times seven,qa_maths
+13037,12,what should i cook tonight,general_quirky
+13038,12,tell me what happens when we die,general_quirky
+13051,49,what state is david lynch from,qa_factoid
+13063,12,set up a date for just you and me,general_quirky
+13071,39,what is the square root of forty two,qa_maths
+13075,49,tell me why bill bur is a better comedian than iliza schleshinger,qa_factoid
+13076,49,tell me tom hanks middle name,qa_factoid
+13084,26,how to spell the word giraffe,qa_definition
+13085,26,can you able to say the word demonetisation,qa_definition
+13100,49,which was longest buildings in the world,qa_factoid
+13106,57,do you hear songs of arrahman music,music_query
+13107,50,schedule a meeting with my colleague,calendar_set
+13110,26,actor who acts a role,qa_definition
+13113,49,please give me information next movie of aamir khan,qa_factoid
+13118,49,none,qa_factoid
+13125,12,can you lie,general_quirky
+13139,26,what is hurricane,qa_definition
+13157,26,google the word,qa_definition
+13185,49,calculate distance from boston to new york,qa_factoid
+13198,39,solve the calculation,qa_maths
+13202,49,what is the population of los angeles,qa_factoid
+13211,12,what is your mother language,general_quirky
+13224,49,how old is jennifer lopez,qa_factoid
+13227,12,sum up all the things for me i could do to make myself happier,general_quirky
+13228,12,if there were ten easy steps to make myself rich what would they be,general_quirky
+13230,49,largest animal,qa_factoid
+13231,49,tallest building,qa_factoid
+13271,49,where is justin bieber's home base,qa_factoid
+13275,12,what is my location,general_quirky
+13280,49,with all of the information you can gather on the internet could you please provide me with the best probable explanation of who killed president kennedy,qa_factoid
+13281,12,i would like my to write original romantic messages for my wife,general_quirky
+13284,49,tell me the story of ramanujan and his mathematical journey,qa_factoid
+13316,49,the following question asks you to analyze teacher goals and actions intended,qa_factoid
+13319,49,who are the greatest hip hop artists,qa_factoid
+13338,26,what does hypocrisy mean,qa_definition
+13339,26,what does the word hypocrisy mean,qa_definition
+13349,12,answer this question what's the first boss in super mario brothers,general_quirky
+13353,26,use in a sentence,qa_definition
+13354,39,what is the answer to two plus two,qa_maths
+13355,26,define swerving,qa_definition
+13367,12,when defining words give thesaurus and use in a sentence to make it clearer,general_quirky
+13373,12,who are the top five all time n. h. l. goal scorers,general_quirky
+13382,49,when was benjamin franklin born,qa_factoid
+13384,49,who is the governor of new york,qa_factoid
+13387,26,what is the definition of pda,qa_definition
+13419,49,what is trump's approval rating,qa_factoid
+13455,12,can you tell me how to get the answer to this,general_quirky
+13462,39,solve math issue,qa_maths
+13465,12,is there life on other planets,general_quirky
+13469,12,what is your favorite color,general_quirky
+13470,12,what do you think of the three laws of robotics,general_quirky
+13480,12,tell me the lucky color of today,general_quirky
+13481,12,read a poem for me,general_quirky
+13490,12,is there a correlation between the weather in beijing and nasdaq prices over the last week,general_quirky
+13496,49,is tom cruise an only child,qa_factoid
+13499,26,please search for this word,qa_definition
+13502,49,why is the sky blue,qa_factoid
+13510,39,what is twenty four times twenty four,qa_maths
+13515,49,how long is an earth day,qa_factoid
+13517,12,i hope we could have lunch together,general_quirky
+13519,49,who was in the beatles,qa_factoid
+13522,12,will the world come to an end when,general_quirky
+13530,26,what does tense mean,qa_definition
+13533,12,where is my girl friend right now,general_quirky
+13540,26,look up the definition to ambulance,qa_definition
+13544,49,are jello shots calorie free,qa_factoid
+13549,19,can you tell me the cheapest place to get ground beef,recommendation_locations
+13563,26,what does potato mean,qa_definition
+13572,12,tell me an interesting fact about this,general_quirky
+13576,12,when is the next touring,general_quirky
+13583,10,what is the exchange rate between the dollar and the euro currently,qa_currency
+13587,26,define framework,qa_definition
+13588,26,describe a potato,qa_definition
+13615,49,how many times has adel gone diamond,qa_factoid
+13617,12,tell me the most strange thing happening in the world today,general_quirky
+13624,0,tell me time it is,datetime_query
+13643,26,how do you define textual,qa_definition
+13645,12,i want to take a trip to switzerland for free can you take me there,general_quirky
+13647,10,what is the yen us dollar exchange rate,qa_currency
+13651,39,how many miles in five kilometers,qa_maths
+13658,49,how old is angelina jolie,qa_factoid
+13667,49,where is stockton california,qa_factoid
+13682,49,what is barack obama doing right now,qa_factoid
+13704,26,what is a cell tower,qa_definition
+13708,10,what is s. d. in francs,qa_currency
+13710,49,how many miles is new york city from los angeles,qa_factoid
+13720,10,what is the exchange rate of u. s. d. to cad,qa_currency
+13724,26,what do you know about the statue of liberty,qa_definition
+13737,10,what's the exchange rates between u. s. a. and china,qa_currency
+13756,26,find me info on,qa_definition
+13788,49,what's the average elevation of the united states,qa_factoid
+13795,10,what is the exchange rate between us and france,qa_currency
+13797,49,how many people live in san francisco,qa_factoid
+13804,10,siri what is one american dollar in japanese yen,qa_currency
+13806,49,what year was bill pullman born,qa_factoid
+13812,26,tell me about morel mushrooms,qa_definition
+13816,4,stock prices at walmart,qa_stock
+13836,12,which religion is most true,general_quirky
+13842,49,how many miles is it between illinois and louisiana,qa_factoid
+13844,49,how old is tom hanks,qa_factoid
+13846,49,has sally fields ever won an academy award,qa_factoid
+13848,10,tell me the exchange rate for the yen,qa_currency
+13859,10,how much is us dollar against rupee,qa_currency
+13861,10,please show me the exchange rate between the dollar and the yen,qa_currency
+13870,26,what is the definition of a home run,qa_definition
+13875,49,how old is barack obaba,qa_factoid
+13892,12,i need to keep two toddlers busy tell me what to do,general_quirky
+13914,49,can you give me the exchange rate for dollar in rupees,qa_factoid
+13919,26,tell me about the solar powered garden stakes,qa_definition
+13924,49,what is the biggest city in new hampshire,qa_factoid
+13935,26,what's a description of a virtual reality headset,qa_definition
+13938,32,do i have any new tinder matches,calendar_query
+13957,26,what does a banana look like,qa_definition
+13978,49,who is donald trump,qa_factoid
+13988,49,where is denmark,qa_factoid
+14007,49,what is a fjord,qa_factoid
+14010,49,when was dolly parton born,qa_factoid
+14012,26,what does tweet mean,qa_definition
+14014,49,where is north dakota,qa_factoid
+14018,26,what does triumph mean,qa_definition
+14039,49,what us state is farthest north,qa_factoid
+14062,49,where is stonehenge,qa_factoid
+14069,4,i need the stock price for amazon,qa_stock
+14073,10,what is the rate of inr,qa_currency
+14078,49,what is burmuda tiangle,qa_factoid
+14087,10,what is the exchange rate for philippine pesos,qa_currency
+14088,4,what is the current stock rate of facebook,qa_stock
+14125,49,show bio of rihana,qa_factoid
+14144,10,euro to u. s. d.,qa_currency
+14145,49,could you please give me the birthday of mahatma gandhiji,qa_factoid
+14152,49,what type of pant is a culotte,qa_factoid
+14156,26,try out in wikipedia,qa_definition
+14173,10,olly is a dollar worth more or less in brazil,qa_currency
+14175,26,what does the shirt look like,qa_definition
+14195,4,ask my adviser,qa_stock
+14203,4,what's the dow jones at today,qa_stock
+14205,4,please tell me when i can become rich if i invested in dow stocks today and what will be the return after five years,qa_stock
+14207,49,what year was elvis born,qa_factoid
+14212,19,find the exact location of the places,recommendation_locations
+14218,39,how many inches make one feet,qa_maths
+14227,10,how much is the euro versus the canadian dollar,qa_currency
+14230,49,list top five movies of emma watson,qa_factoid
+14263,10,what's the exchange rate between the us dollar and the euro,qa_currency
+14267,39,what is six minus four,qa_maths
+14269,10,tell me one euro equals dollars,qa_currency
+14273,49,how big is england,qa_factoid
+14285,49,tell me about new york,qa_factoid
+14291,49,show various plants in earth,qa_factoid
+14301,4,how is coca-cola stock doing today,qa_stock
+14320,49,who is the wife of obama,qa_factoid
+14341,4,today's closing price for google,qa_stock
+14343,4,mention the stock price of hdfc,qa_stock
+14346,26,what does hypothesis mean,qa_definition
+14358,49,when did the statue of liberty made,qa_factoid
+14361,49,at what age michael phelps got married,qa_factoid
+14377,49,who is arnold schwarzenegger,qa_factoid
+14380,26,what is the definition of inchoate,qa_definition
+14384,49,how tall is the empire state building,qa_factoid
+14390,10,what is the exchange rate between u. s. d. and inr,qa_currency
+14393,49,describe the current state of politics,qa_factoid
+14397,49,when was justin bieber born,qa_factoid
+14408,12,define yourself in one word,general_quirky
+14421,19,where is the nearest italian restaurant,recommendation_locations
+14430,26,can you tell me what haggis looks like,qa_definition
+14450,49,is pink recording a new album,qa_factoid
+14452,26,definition for object name,qa_definition
+14458,26,how would the volkswagen golf car look like,qa_definition
+14460,12,features of ipad air,general_quirky
+14479,49,tell me distance between sun and moon,qa_factoid
+14492,26,find world meaning in dictionary,qa_definition
+14516,49,which is the best smartphone in two thousand and seventeen,qa_factoid
+14527,10,exchange rate i will get with foreign currency,qa_currency
+14541,12,get me details of this person,general_quirky
+14542,12,please tell few details about this person,general_quirky
+14565,12,what is the most concern issue in u. s. a. today and what can be done to deal with it effectively,general_quirky
+14574,49,who was the twenty fifth president of the united states of america,qa_factoid
+14582,12,tell me how to go bali without airplane with lowest cost option time doesn't matter i have two hundred days travel time and only dollars to spend,general_quirky
+14593,26,give me the description of a laptop circuit,qa_definition
+14596,4,when does iphone stock usually drop,qa_stock
+14604,26,explain,qa_definition
+14609,49,explain to me how gravity works,qa_factoid
+14617,49,when did beyonce and jay z. get married,qa_factoid
+14621,10,exchange rates between dollar and euro,qa_currency
+14635,26,can you tell me what hypertrophy means,qa_definition
+14645,4,stock company name,qa_stock
+14654,12,i would like it if my robot could do my work for me,general_quirky
+14657,26,give me the description of laptop circuit,qa_definition
+14669,26,define xy,qa_definition
+14677,4,give me the opening stock price of apple,qa_stock
+14704,19,where can i get organic wheat,recommendation_locations
+14708,4,stock please,qa_stock
+14719,10,change dollar to rupees rates,qa_currency
+14721,10,dollar rupees exchange rate,qa_currency
+14727,12,what is the factor that let modi win the election,general_quirky
+14731,12,earthquake prediction,general_quirky
+14737,37,ok google what's the easiest and quickest way to cook a turkey,cooking_query
+14744,12,what kind of implement is a broiler and how do i use it,general_quirky
+14745,26,define broiler for me,qa_definition
+14755,49,where is statue of liberty,qa_factoid
+14764,26,describe to me what a ball looks like,qa_definition
+14773,49,alexa give me everything you know about bob dean,qa_factoid
+14774,4,tell me amd stock prices,qa_stock
+14775,4,what are amd stock prices,qa_stock
+14796,4,what is the stock value of google,qa_stock
+14803,12,you were bring an new schemes,general_quirky
+14808,10,convert one pound to us dollar,qa_currency
+14819,4,high stock price,qa_stock
+14827,49,how many mega pixel is listed in the description of the canon,qa_factoid
+14848,49,how did paris hilton become famous,qa_factoid
+14849,39,what is the answer to two times three,qa_maths
+14850,39,how much is twelve divided by four,qa_maths
+14852,49,what is julia roberts natural hair color,qa_factoid
+14861,10,if i have five u. s. d. how much is that in aud,qa_currency
+14865,26,define the moon for me,qa_definition
+14866,49,how many rivers are there in the world,qa_factoid
+14868,49,find me some celebrities that are capricorns,qa_factoid
+14872,12,if it is a consumer good then what is the customer feedback,general_quirky
+14882,10,how much is indian rupee going against u. s. dollar,qa_currency
+14888,26,could you describe that object please,qa_definition
+14897,49,which was the first satellite to be launched by nasa,qa_factoid
+14901,26,please describe an elephant to me,qa_definition
+14906,10,what's the us dollar rate today,qa_currency
+14918,49,how long has princess kate been pregnant,qa_factoid
+14920,4,what's the stock price for tesco,qa_stock
+14924,12,i would like it to easily keep an inventory and tell me when i'm running low on something,general_quirky
+14930,49,what's trump been on about this week,qa_factoid
+14946,26,what is the definition of marinara,qa_definition
+14950,12,how people are thinking in such a manner that they can hide everything from god,general_quirky
+14952,10,currency exchange rates,qa_currency
+14953,26,what is a by,qa_definition
+14961,49,how old is christie brinkley,qa_factoid
+14971,12,tell me how the world began,general_quirky
+14985,10,tell me the exchange rate of ten dollar to euro,qa_currency
+14987,26,what is computer,qa_definition
+14989,49,which is the smallest island in the world,qa_factoid
+15014,49,how big is japan,qa_factoid
+15015,42,how far is it from new york to japan,transport_query
+15017,55,can you tell me what movies are playing at the movies tonight,recommendation_movies
+15030,26,olly what is the definition of the word snafu,qa_definition
+15033,10,olly what is the exchange rate between the us dollar and the aus dollar,qa_currency
+15043,4,what apple trading at,qa_stock
+15047,26,hey olly what is the definition of passive,qa_definition
+15057,49,how old was albert einstein when he came up with relativity theory,qa_factoid
+15064,49,calculate a close integral of exponential function from zero to five,qa_factoid
+15065,49,tell me how brexit is going to affect e. u. citizens in the long and mid terms,qa_factoid
+15090,10,please look up exchange between us and mexico,qa_currency
+15093,26,olly find a description about a samsung t. v.,qa_definition
+15097,10,what's the exchange rate for samsung,qa_currency
+15100,49,how far away is,qa_factoid
+15125,26,what is this thing,qa_definition
+15134,4,what is i. b. m. stock at,qa_stock
+15145,27,what trending on twitter,social_query
+15157,27,what was the last thing my mom said,social_query
+15171,27,get me updates from kenny's facebook from the weekend,social_query
+15174,27,find me new comments from my facebook,social_query
+15180,27,how many likes does my last instagram photo have,social_query
+15182,27,read me the last tweet from the washington post,social_query
+15193,47,post new status on facebook time to celebrate,social_post
+15207,27,my facebook update in every three hour should be available,social_query
+15215,47,put that on facebook,social_post
+15219,47,this article is super cool can you share the link to facebook for me,social_post
+15221,47,broadcast a video in youtube,social_post
+15242,47,facebook status busy day,social_post
+15245,47,please post to jeff,social_post
+15247,47,please submit status to facebook,social_post
+15252,27,show me a list of places where my relatives have been based on their photos,social_query
+15258,27,latest news feed from facebook,social_query
+15265,27,give me details of my twitter handle profile including the total number of followers,social_query
+15269,47,nice can you post this to my facebook,social_post
+15272,27,can you tell me what happened to my social media,social_query
+15294,27,what is the latest from my feed,social_query
+15297,27,please inform me of any new status updates,social_query
+15301,27,trending social media,social_query
+15319,47,new tweet,social_post
+15342,47,bring up facebook and wish a happy birthday to the country u. s. a.,social_post
+15349,47,i'm unhappy with tesco please help me,social_post
+15370,47,can you send a tweet to lif saying that their app crashed,social_post
+15374,47,post the following as a status on facebook,social_post
+15375,47,please post a status on twitter say,social_post
+15379,47,please post this picture to my facebook,social_post
+15381,47,tweet lfi and let them know my app crashed,social_post
+15388,47,tell my facebook group that i've arrived,social_post
+15396,47,please make a complaint to levis,social_post
+15397,47,tell them that their lines were too long,social_post
+15414,12,i need a manger,general_quirky
+15421,47,send this message to at microsoft on twitter,social_post
+15427,47,post pic on my phone on facebook alexa,social_post
+15436,47,tweet a complaint to old navy website,social_post
+15455,47,send tweet to united airlines i'm angry you lost my bags,social_post
+15458,47,i had a horrible service at olive garden i need to tweet them,social_post
+15460,47,send complaint through twitter consumer service,social_post
+15462,47,can you tweet a complaint to the furniture store customer service,social_post
+15466,47,tell comcast i am still on hold,social_post
+15471,47,write a complaint to alzacz for the tablet i bought today,social_post
+15475,47,let national grid know the power is out again,social_post
+15478,47,contact amazon customer service via twitter,social_post
+15512,27,please update me on my social media accounts,social_query
+15514,47,tweet complaint to samsung,social_post
+15516,47,please make a tweet to dell company about the faulty service of laptop,social_post
+15531,47,tweet walmart and tell them their customer service is horrible,social_post
+15533,47,olly send a tweet to meijer tell them that they have the worst customer service,social_post
+15538,47,customer service complaint tweet the following,social_post
+15540,27,did mark post anything new on facebook,social_query
+15541,47,send a tweet to dominoes about bad delivery,social_post
+15545,50,remind me to tweet at this company,calendar_set
+15558,47,post to facebook aww i'm sick,social_post
+15559,47,post to tumblr i'm having fun,social_post
+15562,12,address the situation,general_quirky
+15572,47,tweet complaint to burger king,social_post
+15581,47,olly send a tweet to company,social_post
+15583,47,tweet a complaint about my refrigerator to l. g.,social_post
+15588,47,open gallery post video name,social_post
+15596,47,post to twitter got a hectic day ahead,social_post
+15609,47,tweet customer service not good for liter per gram service in my twitter account,social_post
+15625,47,tweet complaint,social_post
+15630,27,what are the latest photos on my instagram account,social_query
+15632,47,ok google tweet the service at moe's diner is terrible,social_post
+15639,47,tweet for me the complaint about drainage choke up,social_post
+15645,27,social info,social_query
+15695,47,tweet consumer service that i am very disappointed with my recent interaction,social_post
+15725,47,i want to post a status on twitter,social_post
+15753,44,when did i get an email from john smith about car accident,email_query
+15761,44,let me know if i have new emails,email_query
+15778,33,send email to emilia saying i will be late please don't wait with dinner,email_sendemail
+15786,44,is there any email from emilia,email_query
+15795,33,can you send an email to chelsea please,email_sendemail
+15798,44,check my inbox,email_query
+15805,33,email david about the meeting tomorrow david can we have the meeting in the afternoon,email_sendemail
+15812,12,olly i would like to know about jane's party,general_quirky
+15836,33,open my most recent email and reply,email_sendemail
+15858,33,send this content via email,email_sendemail
+15861,33,send an email to mom subject weather body what is the weather like there this week,email_sendemail
+15863,44,check emails for unread emails from mom,email_query
+15867,17,please give me details of allen from my contact,email_querycontact
+15868,17,is there a contact named allen in my list,email_querycontact
+15897,33,send happy new year to john at gmail dot com,email_sendemail
+15900,17,what is john's last name,email_querycontact
+15903,33,send a reply to my friend for his question,email_sendemail
+15909,44,check emails for last two hours,email_query
+15910,44,check emails for last twelve hours,email_query
+15921,15,alexa add erosser at hotmail dot com as a new contact for emily rosser,email_addcontact
+15930,44,let me know if there are any new emails from ebay,email_query
+15939,33,email the following message to this contact please,email_sendemail
+15973,44,check and see if i've received any emails from eddie richards having to do with budgets,email_query
+15986,15,save this email in contact,email_addcontact
+15993,33,send ashmit his latest tech topics available,email_sendemail
+16007,44,let me know when casey emails me,email_query
+16020,44,let me know what's accumulated in my inbox since three p. m.,email_query
+16025,33,can you send email to my friend rohit which says i am busy tomorrow,email_sendemail
+16026,44,search matthews deadlines,email_query
+16027,33,hey start an email to coworker,email_sendemail
+16030,33,open new email to this coworker at this email,email_sendemail
+16037,44,please refresh my gmail inbox,email_query
+16066,33,send a hi to,email_sendemail
+16078,44,show latest email from mark,email_query
+16081,33,send an email to my manager,email_sendemail
+16083,44,display latest emails olly,email_query
+16085,33,email george brown,email_sendemail
+16090,44,any incoming emails in the last five minutes,email_query
+16104,33,send an email to my friend say birthday wishes,email_sendemail
+16107,17,what is mom's email address,email_querycontact
+16132,33,i would like this new email should be added to my contacts,email_sendemail
+16135,33,send email to enalen i'm going to send the files the next day,email_sendemail
+16140,44,show all the received emails recently with time stamp,email_query
+16144,44,show me new email,email_query
+16160,33,open reply,email_sendemail
+16161,33,reply back to this email,email_sendemail
+16173,33,send email to gbaby tell her gma loves her and hopes she has a great weekend,email_sendemail
+16176,33,compose reply,email_sendemail
+16184,17,tell me the contact details of my brother,email_querycontact
+16206,33,send this message to the family group starts with a,email_sendemail
+16214,44,who have emailed me recently and what are the subjects of each email,email_query
+16232,33,olly please respond to greg's email stating that his idea is fantastic,email_sendemail
+16241,33,send email to boss to meet for performance review,email_sendemail
+16244,17,does bob live in france,email_querycontact
+16249,44,notify me if i receive any mail on my email account,email_query
+16279,33,email the message hi come down for dinner tonight to bro,email_sendemail
+16286,33,send an email to guy selling the boat telling him that i have the money,email_sendemail
+16288,44,tell me who send the email about the boss yesterday,email_query
+16289,44,what did the clinic say about my exams,email_query
+16290,17,can i find out information about a contact,email_querycontact
+16294,44,read my unread emails,email_query
+16298,44,check for new emails,email_query
+16303,44,can you check to see if i have any recent email alerts,email_query
+16305,33,send an email for me,email_sendemail
+16319,33,reply to all,email_sendemail
+16322,33,tell bob smith,email_sendemail
+16330,33,reply with thanks,email_sendemail
+16334,44,do i have any new emails from john smith,email_query
+16372,44,are there any emails in regard to my promotion,email_query
+16386,44,hey check emails,email_query
+16393,44,list the subjects and senders of all emails to me in the last week,email_query
+16394,44,who emailed me recently and what did they email about,email_query
+16396,33,send the email to john,email_sendemail
+16407,33,start email,email_sendemail
+16421,44,how many unread emails do i have,email_query
+16423,33,send email to robert what time is dinner,email_sendemail
+16442,33,send email to comcast that their service sucks,email_sendemail
+16445,44,please check for recent email study from this sender,email_query
+16448,44,open my email account and check for new email,email_query
+16454,33,send an email to my boss saying i will be late,email_sendemail
+16462,44,what new messages do i have,email_query
+16463,44,open my new emails,email_query
+16478,44,check emails from cindy,email_query
+16479,33,reply to mark's email,email_sendemail
+16487,44,how many emails today,email_query
+16493,44,did my mom send me an email,email_query
+16512,33,send email to mom want to go shopping tomorrow,email_sendemail
+16525,44,check all emails from eric,email_query
+16533,33,will you help me write an email to chelsea,email_sendemail
+16543,44,olly please check if i got any emails from mom,email_query
+16570,33,send an email to all my company workers,email_sendemail
+16573,33,email message to address,email_sendemail
+16574,33,new address,email_sendemail
+16580,44,google find the new email address for bill that i added friday,email_query
+16582,17,is this the correct area code for my boss,email_querycontact
+16586,33,reply,email_sendemail
+16588,17,please delete the contacts that i haven't spoken to in three of months,email_querycontact
+16601,33,i want to send email to jack at gmail dot com,email_sendemail
+16611,33,send email to daughter saying i love you,email_sendemail
+16612,33,send email to mom saying happy birthday,email_sendemail
+16615,44,please tell me if july has sent me any emails,email_query
+16641,44,any new email from the boss,email_query
+16653,44,did i receive any email in the past hour,email_query
+16685,44,has any personal emails come in yet,email_query
+16699,33,open up my sister's email from yesterday click reply and turn on voice activation for my response,email_sendemail
+16709,17,how many contacts do i have in my phone book,email_querycontact
+16723,44,can you see what andrew emailed me about,email_query
+16726,44,i want to find emails from bob with the subject that contains the word meeting,email_query
+16744,33,please send the email to my mom,email_sendemail
+16745,44,did mike send me an email,email_query
+16750,44,look at my email,email_query
+16768,33,open terry's email,email_sendemail
+16769,44,search email for contact,email_query
+16770,44,find contact,email_query
+16774,44,bring up my email,email_query
+16779,17,open the contact named john,email_querycontact
+16788,44,who did i email recently,email_query
+16795,44,what are the subject line and sender from today's email inbox,email_query
+16818,17,please open my contact list,email_querycontact
+16821,17,open derek's contact information,email_querycontact
+16825,44,check for all emails from tom brady,email_query
+16829,33,send a reply to mike,email_sendemail
+16833,44,hey did i get any new emails,email_query
+16840,33,email tom,email_sendemail
+16843,44,check my mail,email_query
+16848,33,i need to email susan and metion,email_sendemail
+16850,44,show unread,email_query
+16877,44,are there new emails in my inbox,email_query
+16881,33,reply mail,email_sendemail
+16885,33,send an email to m. s. palmer ask her if dean turned in his last homework assignment,email_sendemail
+16903,33,send a response to my last email,email_sendemail
+16929,33,reply to jason's email with the response six thirty,email_sendemail
+16945,44,what mail do i have,email_query
+16971,33,i want to reply to jean's email,email_sendemail
+16991,44,check emails from jane doe,email_query
+17006,44,is there any new emails,email_query
+17009,44,check by inbox for me,email_query
+17017,15,save the email to my contact,email_addcontact
+17018,15,save to contacts,email_addcontact
+17034,44,give me all my recent emails,email_query
+17035,44,what is my recent email activity,email_query
+17037,17,give me contact mail id,email_querycontact
+17046,44,please let me know new emails from michael,email_query
+17048,44,just let me know new emails from sara,email_query
+17074,44,have i received any email since five p. m.,email_query
+17076,44,did i get any emails from sam today,email_query
+17080,33,publish an email to my company worker with today's scheduled meeting information,email_sendemail
+17082,44,did i get any new emails today from claire,email_query
+17093,33,send email to marissa,email_sendemail
+17102,17,call raju phone number,email_querycontact
+17121,44,report any new emails,email_query
+17137,44,how many unread messages have i got,email_query
+17140,33,please respond to the email i just read,email_sendemail
+17153,44,did bert write me today,email_query
+17167,17,what's the address for alex,email_querycontact
